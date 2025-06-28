@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.umanusi-design.com
+
+# Sitemaps
+Sitemap: https://www.umanusi-design.com/sitemap.xml
