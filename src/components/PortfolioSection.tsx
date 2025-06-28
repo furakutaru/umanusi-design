@@ -61,8 +61,8 @@ const portfolioItems = [
 export const PortfolioSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
+  const [touchStart, setTouchStart] = useState<null | number>(null);
+  const [touchEnd, setTouchEnd] = useState<null | number>(null);
   const [showAttention, setShowAttention] = useState(true);
   const sliderRef = useRef(null);
   const headerRef = useFadeInOnScroll();

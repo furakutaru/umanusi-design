@@ -51,7 +51,7 @@ export const ValuePropositionSection = () => {
             UMANUSI Designが提供する3つの価値
           </h1>
           <p className="mt-4 mb-8 md:mb-12 text-lg md:text-xl font-semibold text-white text-center drop-shadow-md">
-            馬主・厩舎・牧場の"想い"を、デザイン制作から納品までトータルで支援します。
+            馬主・厩舎・牧場の&quot;想い&quot;を、デザイン制作から納品までトータルで支援します。
           </p>
         </div>
         {/* CSS Gridを使用して高さを強制的に揃える */}

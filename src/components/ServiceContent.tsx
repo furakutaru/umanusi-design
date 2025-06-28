@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { FeatureItem } from './FeatureItem';
 
 interface Feature {
-  iconSrc: string;
   text: string;
 }
 
@@ -72,7 +71,7 @@ export const ServiceContent = ({
                   <ul key={rowIndex} className="grid grid-cols-2 gap-4 price-list">
                     {row.map((feature, index) => (
                       <li key={index} className="m-0 p-0">
-                        <FeatureItem iconSrc={feature.iconSrc} text={feature.text} />
+                        <FeatureItem text={feature.text} />
                       </li>
                     ))}
                   </ul>
@@ -86,7 +85,7 @@ export const ServiceContent = ({
                   <div className="flex flex-col items-start w-full text-base text-black">
                     {leftFeatures.map((feature, index) => (
                       <div key={index} className={index > 0 ? 'mt-3.5' : ''}>
-                        <FeatureItem iconSrc={feature.iconSrc} text={feature.text} />
+                        <FeatureItem text={feature.text} />
                       </div>
                     ))}
                   </div>
@@ -96,7 +95,7 @@ export const ServiceContent = ({
                   <div className="flex flex-col items-start w-full text-base text-black">
                     {rightFeatures.map((feature, index) => (
                       <div key={index} className={index > 0 ? 'mt-3.5' : ''}>
-                        <FeatureItem iconSrc={feature.iconSrc} text={feature.text} />
+                        <FeatureItem text={feature.text} />
                       </div>
                     ))}
                   </div>

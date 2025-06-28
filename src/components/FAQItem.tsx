@@ -2,8 +2,6 @@ import React, { ReactNode } from "react";
 import Image from "next/image";
 // import { CheckIcon } from "./CheckIcon";
 
-const iconSrc = "https://cdn.builder.io/api/v1/image/assets/d22efd85dd1e4c99a198cddf2a2a638b/ccd2f23440e74cc7d0ab5d2c011bc9e5c85d80f7?placeholderIfAbsent=true";
-
 interface FAQItemProps {
   question: string;
   answer: ReactNode;
