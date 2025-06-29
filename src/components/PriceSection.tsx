@@ -44,6 +44,10 @@ const apparelItems = [
   {
     serviceName: "キャップ",
     price: "15,000～"
+  },
+  {
+    serviceName: "アクリルスタンド",
+    price: "10,000～"
   }
 ];
 
@@ -112,7 +116,11 @@ export function PriceSection() {
           <p className="text-sm text-center text-gray-700 space-y-2">
             <span>※ 詳細な価格は、デザインの複雑さや数量によって変動する場合があります。お気軽にお問い合わせください。</span>
             <br />
-            <span>※ 価格にプラスして印刷代、送料がかかります。以下以外もお気軽にご相談ください。</span>
+            <span>※ 価格にプラスして印刷代、送料がかかります。</span>
+            <br />
+            <span>※表示価格は全て税込みです。</span>
+            <br />
+            <span>※以下以外もお気軽にご相談ください。</span>
           </p>
         </aside>
       </div>
