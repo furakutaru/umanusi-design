@@ -38,7 +38,12 @@ export const metadata: Metadata = {
     site: "@furakutaru"
   },
   icons: {
-    icon: "/favicon.ico"
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.ico", type: "image/x-icon" }
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico"
   },
   metadataBase: new URL("https://www.umanusi-design.com/")
 };
