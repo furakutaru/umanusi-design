@@ -30,7 +30,7 @@ export const ProfileContent = ({ headingRef, headingClassName, contentRef, conte
 
       <div ref={contentRef} className={contentClassName} style={{ transitionDelay: '0.3s' }}>
         <MessageBody>
-          はじめましてデザイナー馬主のUMAです。
+          はじめまして馬主デザイナーのUMAです。
           <br />
           このサービスを始めたのは、一般的なデザインでは表現しきれない、競馬の世界特有の
           「熱量」や「物語」を形にしたかったから。
