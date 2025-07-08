@@ -35,7 +35,7 @@ export default function HeroHeader() {
   }, []);
 
   return (
-    <header ref={fadeRef.ref} className={`fade-in${fadeRef.isVisible ? ' is-visible' : ''} relative w-full h-[700px] md:h-screen max-h-[800px] overflow-hidden text-center`}>
+    <header id="top" ref={fadeRef.ref} className={`fade-in${fadeRef.isVisible ? ' is-visible' : ''} relative w-full h-[700px] md:h-screen max-h-[800px] overflow-hidden text-center`}>
       {/* 背景動画 */}
       <video
         ref={videoRef}

@@ -43,6 +43,7 @@ export default function Process() {
 
   return (
     <section 
+      id="process"
       className="relative w-full overflow-hidden py-12 md:py-16 bg-center bg-cover bg-fixed"
       style={{
         backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets/d22efd85dd1e4c99a198cddf2a2a638b/bcbd7e22bef8b422aebcfd3bc499b206ca37673a?placeholderIfAbsent=true')`,

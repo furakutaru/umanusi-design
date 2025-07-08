@@ -38,6 +38,10 @@ body, html {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .fade-in {
   opacity: 0;
   transform: translateY(40px);

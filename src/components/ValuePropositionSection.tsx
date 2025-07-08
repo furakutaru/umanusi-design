@@ -34,6 +34,7 @@ export const ValuePropositionSection = () => {
 
   return (
     <section 
+      id="value"
       className="relative w-full py-12 md:py-20 bg-center bg-cover bg-fixed"
       style={{ 
         backgroundImage: `url('/value-bg.jpg')`,

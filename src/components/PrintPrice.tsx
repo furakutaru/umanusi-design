@@ -27,7 +27,7 @@ export const PrintPrice = () => {
   const contentRef = useFadeInOnScroll();
   
   return (
-    <section className="w-full bg-white py-6 md:py-16">
+    <section id="print-price" className="w-full bg-white py-6 md:py-16">
       <div className="max-w-[1200px] mx-auto px-4">
         {/* ヘッダー：最初にフェードイン */}
         <header ref={headerRef.ref} className={`fade-in${headerRef.isVisible ? ' is-visible' : ''} text-center mb-8 md:mb-12`}>

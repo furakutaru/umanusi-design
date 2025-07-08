@@ -13,7 +13,7 @@ export const HeroContent = () => {
         デザイナーとしての技術
       </h1>
       <p className="text-lg md:text-2xl text-white mb-8 drop-shadow-md">
-        競馬に強いデザイナーが、愛馬の記念を形にします
+        馬主デザイナーが、愛馬の記念を形にします
       </p>
       <div ref={buttonsRef.ref} className="flex flex-col sm:flex-row gap-4">
         <HeroButtons />

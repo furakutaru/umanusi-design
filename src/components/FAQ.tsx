@@ -65,7 +65,7 @@ export const FAQ = () => {
   const itemRefs = [useFadeInOnScroll(), useFadeInOnScroll(), useFadeInOnScroll(), useFadeInOnScroll(), useFadeInOnScroll()];
 
   return (
-    <section className="w-full bg-white py-12 md:py-16">
+    <section id="faq" className="w-full bg-white py-12 md:py-16">
       <div className="max-w-[800px] mx-auto px-4">
         <header ref={headerRef.ref} className={`fade-in${headerRef.isVisible ? ' is-visible' : ''} text-center mb-8 md:mb-12`}>
           <h1 className="text-3xl md:text-4xl font-bold text-black">よくある質問</h1>

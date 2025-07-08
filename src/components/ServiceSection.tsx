@@ -88,7 +88,7 @@ export const ServiceSection = () => {
   }, [activeTab, displayedTab]);
 
   return (
-    <section className="w-full max-w-[1200px] mx-auto py-8 md:py-16 px-4 sm:px-6 lg:px-8">
+    <section id="service" className="w-full max-w-[1200px] mx-auto py-8 md:py-16 px-4 sm:px-6 lg:px-8">
       {/* ヘッダー：最初にフェードイン */}
       <header ref={headerRef.ref} className={`fade-in${headerRef.isVisible ? ' is-visible' : ''} text-center w-full`}>
         <h1 className="text-3xl md:text-4xl font-bold leading-none text-black mb-0">
