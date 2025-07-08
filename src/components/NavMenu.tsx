@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useRef } from 'react';
 
 const MENU_GROUPS = [
   {
@@ -59,8 +58,7 @@ export const NavMenu = () => {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
 
-  // SP判定
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
 
   return (
     <>
