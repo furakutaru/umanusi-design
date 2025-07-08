@@ -34,6 +34,25 @@ export const Footer = () => {
               制作を相談・依頼する
             </FooterButton>
           </div>
+          {/* BLOG・NetShopリンク追加 */}
+          <div className="flex flex-row gap-6 justify-center items-center mt-2">
+            <a
+              href="https://note.com/furakutaru/m/m57888eba2c94"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-sm underline hover:text-gray-200 transition-colors"
+            >
+              BLOG
+            </a>
+            <a
+              href="https://umamawari.stores.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-sm underline hover:text-gray-200 transition-colors"
+            >
+              NetShop
+            </a>
+          </div>
         </div>
       </section>
       <section className="w-full bg-gray-900 py-3.5">
