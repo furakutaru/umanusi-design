@@ -7,6 +7,36 @@ import { useFadeInOnScroll } from "../hooks/useFadeInOnScroll";
 
 const portfolioItems = [
   {
+    image: "/item11.webp",
+    title: "長谷川厩舎さま名刺",
+    description: "船橋競馬の長谷川厩舎さまの名刺作成させて頂きました"
+  },
+  {
+    image: "/item12.webp",
+    title: "リトルリリイ号出走記念レイ風タオル",
+    description: "フリンジを縫い付けレイ風に"
+  },
+  {
+    image: "/item13.webp",
+    title: "サンオルソーライズ号蹄鉄盾",
+    description: "馬名に合わせ朝日が登るイメージで作成"
+  },
+  {
+    image: "/item14.webp",
+    title: "オウケンデューク号トレーディングカード",
+    description: "低コストで配布に最適！"
+  },
+  {
+    image: "/item15.webp",
+    title: "ルミナヴァル号アクリルスタンド",
+    description: "ジオラマタイプで奥行きのあるアクリルスタンド"
+  },
+  {
+    image: "/item16.webp",
+    title: "ピックアンドロール号Tシャツ",
+    description: "ツアーTシャツ風に仕上げました"
+  },
+  {
     image: "/portfolio-horse-logo.webp",
     title: "馬名ロゴ",
     description: "オリジナルグッズや出馬予告画像、メンコなどに利用"
@@ -55,36 +85,6 @@ const portfolioItems = [
     image: "/portfolio-pick-and-roll-photo.webp",
     title: "ピックアンドロール号勝利写真",
     description: "L版の勝利写真をカスタマイズ"
-  },
-  {
-    image: "/item11.webp",
-    title: "長谷川厩舎さま名刺",
-    description: "船橋競馬の長谷川厩舎さまの名刺作成させて頂きました"
-  },
-  {
-    image: "/item12.webp",
-    title: "リトルリリイ号出走記念レイ風タオル",
-    description: "フリンジを縫い付けレイ風に"
-  },
-  {
-    image: "/item13.webp",
-    title: "サンオルソーライズ号蹄鉄盾",
-    description: "馬名に合わせ朝日が登るイメージで作成"
-  },
-  {
-    image: "/item14.webp",
-    title: "オウケンデューク号トレーディングカード",
-    description: "低コストで配布に最適！"
-  },
-  {
-    image: "/item15.webp",
-    title: "ルミナヴァル号アクリルスタンド",
-    description: "ジオラマタイプで奥行きのあるアクリルスタンド"
-  },
-  {
-    image: "/item16.webp",
-    title: "ピックアンドロール号Tシャツ",
-    description: "ツアーTシャツ風に仕上げました"
   }
 ];
 
