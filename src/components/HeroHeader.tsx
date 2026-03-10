@@ -40,7 +40,7 @@ export default function HeroHeader() {
       <video
         ref={videoRef}
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        src="/bg.mp4"
+        src="/bg.webm"
         autoPlay
         loop
         muted
