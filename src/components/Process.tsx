@@ -8,7 +8,7 @@ const processSteps = [
   {
     number: "01",
     title: "ご相談",
-    description: "お客様のビジョンを<br />お聞かせください。<br />まずはXのリプライかDMでお気軽にご連絡ください。"
+    description: "お客様のビジョンを<br />お聞かせください。<br />まずはご依頼・ご相談ボタンからか、XのリプライまたはDMでお気軽にご連絡ください。"
   },
   {
     number: "02",
