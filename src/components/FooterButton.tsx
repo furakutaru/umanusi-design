@@ -14,7 +14,7 @@ export const FooterButton = ({
 }: FooterButtonProps) => {
   return (
     <a
-      href="https://x.com/furakutaru"
+      href="https://forms.gle/V9r7VgnJzw6MjEQb7"
       target="_blank"
       rel="noopener noreferrer"
       className="block"

@@ -27,12 +27,27 @@ export const Footer = () => {
             style={{ transitionDelay: '0.3s' }}
             className={`fade-in${subtitleRef.isVisible ? ' is-visible' : ''} mt-4 text-lg md:text-xl font-semibold text-white text-center`}
           >
-            ご依頼、ご相談は、XのリプライまたはDMにてお受けしております。
+            ご依頼はもちろん、『こんなことは可能でしょうか？』といったご相談も
+            いつでもお気軽にお寄せください。よろしくお願いいたします。
           </h2>
           <div ref={buttonRef.ref} style={{ transitionDelay: '0.6s' }} className={`fade-in${buttonRef.isVisible ? ' is-visible' : ''} w-[90vw] md:w-[340px] py-4`}>
             <FooterButton onClick={handleConsultationClick}>
               制作を相談・依頼する
             </FooterButton>
+          </div>
+          <div className="text-center mt-4">
+            <p className="text-white text-sm">
+              または
+              <a
+                href="https://x.com/furakutaru"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-gray-200 transition-colors mx-1"
+              >
+                @furakutaru
+              </a>
+              でも受け付けております。
+            </p>
           </div>
           {/* BLOG・NetShopリンク追加 */}
           <div className="flex flex-row gap-6 justify-center items-center mt-2">
