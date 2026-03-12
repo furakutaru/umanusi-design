@@ -15,6 +15,8 @@ const MENU_GROUPS = [
     children: [
       { label: '活用シーン', target: 'usecase' },
       { label: 'サービス内容', target: 'service' },
+      { label: '制作実績', target: 'portfolio' },
+      { label: 'お客さまの声', target: 'testimonials' },
       { label: '対応サービス', target: 'service-list' },
     ],
   },
