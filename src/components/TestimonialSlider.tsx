@@ -40,7 +40,7 @@ export function TestimonialSlider({ testimonials }: TestimonialSliderProps) {
     if (currentIndex > maxIndex) {
       setCurrentIndex(maxIndex);
     }
-  }, [visibleCount, testimonials.length]);
+  }, [visibleCount, testimonials.length, currentIndex]);
 
   // スワイプ機能
   const minSwipeDistance = 50;

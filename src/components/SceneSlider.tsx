@@ -43,7 +43,7 @@ export function SceneSlider({ scenes }: SceneSliderProps) {
     if (currentIndex > maxIndex) {
       setCurrentIndex(maxIndex);
     }
-  }, [visibleCount, scenes.length]);
+  }, [visibleCount, scenes.length, currentIndex]);
 
   // スワイプ機能
   const minSwipeDistance = 50;

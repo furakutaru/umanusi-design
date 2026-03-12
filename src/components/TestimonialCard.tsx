@@ -1,13 +1,11 @@
 import React from "react";
 
 interface TestimonialCardProps {
-  id: string;
   customer: string;
   testimonial: string;
 }
 
 export function TestimonialCard({
-  id,
   customer,
   testimonial
 }: TestimonialCardProps) {
