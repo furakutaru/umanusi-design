@@ -29,6 +29,14 @@ const faqData = [
         <span>
           基本的な料金表はございますが、詳細はご相談の上で決定させていただきます。
         </span>
+        <br />
+        <span>
+          また印刷代+送料が含まれます。
+        </span>
+        <br />
+        <span>
+          印刷代の目安は印刷代参考料金をご確認ください。
+        </span>
       </>
     ),
   },
@@ -60,11 +68,46 @@ const faqData = [
     answer:
       "銀行振込とPayPay、PayPal（クレジットカード）に対応しております。商品受け取り後1週間以内にお支払いお願いします。",
   },
+  {
+    question: "リストに無いものでも制作可能ですか？",
+    answer:
+      "リストに無いもので製作可能です。世にある大抵のものは製作可能ですが、ロット数や印刷代の問題がありますの100％ご希望にそえられない場合もございます。",
+  },
+  {
+    question: "依頼時に用意しておくものはありますか？",
+    answer: (
+      <>
+        <span>
+          漠然としたアイデアから共に詰めていく事も可能ですが以下が有るとお話がスムーズになるかと思います。
+        </span>
+        <br />
+        <span>
+          もちろんどれも無くても問題有りません。
+        </span>
+        <br />
+        <span>
+          ・対象のお写真（ご利用になる場合）
+        </span>
+        <br />
+        <span>
+          ・対象のお名前等掲載希望事項
+        </span>
+        <br />
+        <span>
+          ・ご希望納期
+        </span>
+        <br />
+        <span>
+          ・デザイン、形状、色等の参考画像
+        </span>
+      </>
+    ),
+  },
 ];
 
 export const FAQ = () => {
   const headerRef = useFadeInOnScroll();
-  const itemRefs = [useFadeInOnScroll(), useFadeInOnScroll(), useFadeInOnScroll(), useFadeInOnScroll(), useFadeInOnScroll()];
+  const itemRefs = [useFadeInOnScroll(), useFadeInOnScroll(), useFadeInOnScroll(), useFadeInOnScroll(), useFadeInOnScroll(), useFadeInOnScroll(), useFadeInOnScroll()];
 
   return (
     <section id="faq" className="w-full bg-white py-12 md:py-16">
