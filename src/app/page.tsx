@@ -5,6 +5,7 @@ import UseCaseSection from '../components/UseCaseSection';
 import ServiceSection from '../components/ServiceSection';
 import { CTAArea } from '../components/CTAArea';
 import PortfolioSection from '../components/PortfolioSection';
+import TestimonialSection from '../components/TestimonialSection';
 import { PriceSection } from '../components/PriceSection';
 import PrintPrice from '../components/PrintPrice';
 import { ServiceList } from '../components/ServiceList';
@@ -23,6 +24,7 @@ export default function Home() {
         <ServiceSection />
         <CTAArea />
         <PortfolioSection />
+        <TestimonialSection />
         <PriceSection />
         <PrintPrice />
         <ServiceList />
