@@ -2,6 +2,7 @@
 import React from "react";
 import { FAQItem } from "./FAQItem";
 import { useFadeInOnScroll } from "../hooks/useFadeInOnScroll";
+import { AnimatedUnderline } from "./AnimatedUnderline";
 
 const faqData = [
   {
@@ -14,7 +15,7 @@ const faqData = [
           もしくは、XでリプライまたはDMでお願いいたします。
         </span>
         <br />
-        <span>漠然としたイメージでもOKですお気軽にご連絡下さい。</span>
+        <span><AnimatedUnderline>漠然としたイメージでもOKですお気軽にご連絡下さい。</AnimatedUnderline></span>
       </>
     ),
   },
@@ -42,8 +43,12 @@ const faqData = [
   },
   {
     question: "デザインの修正は可能ですか？",
-    answer:
-      "はい、お客様のご要望に沿ってデザインの修正を行います。最終的にご満足いただけるまで調整いたします。",
+    answer: (
+      <>
+        はい、お客様のご要望に沿ってデザインの修正を行います。
+        <AnimatedUnderline>最終的にご満足いただけるまで調整いたします。</AnimatedUnderline>
+      </>
+    ),
   },
   {
     question: "納品までの期間はどのくらいですか？",
@@ -70,8 +75,12 @@ const faqData = [
   },
   {
     question: "リストに無いものでも制作可能ですか？",
-    answer:
-      "リストに無いもので製作可能です。世にある大抵のものは製作可能ですが、ロット数や印刷代の問題がありますの100％ご希望にそえられない場合もございます。",
+    answer: (
+      <>
+        <AnimatedUnderline>リストに無いもので製作可能です。</AnimatedUnderline>
+        世にある大抵のものは製作可能ですが、ロット数や印刷代の問題がありますの100％ご希望にそえられない場合もございます。
+      </>
+    ),
   },
   {
     question: "依頼時に用意しておくものはありますか？",

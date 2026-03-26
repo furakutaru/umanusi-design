@@ -4,6 +4,7 @@ import { MessageHeading } from './MessageHeading';
 import { MessageSubtitle } from './MessageSubtitle';
 import { MessageBody } from './MessageBody';
 import { AccordionHeader } from './AccordionHeader';
+import { AnimatedUnderline } from './AnimatedUnderline';
 
 interface ProfileContentProps {
   headingRef: React.RefObject<HTMLDivElement>;
@@ -20,11 +21,11 @@ export const ProfileContent = ({ headingRef, headingClassName, contentRef, conte
     <div className="flex flex-col w-full">
       <div ref={headingRef} className={headingClassName}>
         <MessageHeading>
-          私も、あなたと同じ一人の馬主です。
+          私も、あなたと同じ<AnimatedUnderline delay={0.3}>一人の馬主</AnimatedUnderline>です。
         </MessageHeading>
 
         <MessageSubtitle>
-          勝った馬も、勝てなかった馬も、みんな宝物。
+          勝った馬も、勝てなかった馬も、<AnimatedUnderline delay={0.6}>みんな宝物。</AnimatedUnderline>
         </MessageSubtitle>
       </div>
 
@@ -37,7 +38,7 @@ export const ProfileContent = ({ headingRef, headingClassName, contentRef, conte
           <br />
           勝負服の色に込められた想いや、一戦一戦のドラマ。
           <br />
-          その価値を、私はあなたの次くらい理解しています。
+          その価値を、私は<AnimatedUnderline delay={0.4}>あなたの次くらい理解しています。</AnimatedUnderline>
           <br />
           <br />
           あなたの愛馬との絆、厩舎の誇りを、唯一無二のデザインへ。
