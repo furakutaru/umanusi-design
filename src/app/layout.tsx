@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import NavMenu from '../components/NavMenu';
+import { FloatingNav } from '../components/FloatingNav';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,28 +56,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <NavMenu />
-      <html lang="ja">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          {/* Google Analytics */}
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-VYY9Y5V89Q"
-            strategy="afterInteractive"
-          />
-          <Script id="ga-init" strategy="afterInteractive">
-            {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-VYY9Y5V89Q');
-          `}
-          </Script>
-          {children}
-        </body>
-      </html>
-    </>
+    <html lang="ja">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <NavMenu />
+        <FloatingNav />
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VYY9Y5V89Q"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-VYY9Y5V89Q');
+        `}
+        </Script>
+        {children}
+      </body>
+    </html>
   );
 }

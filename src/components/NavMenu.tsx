@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 
-const MENU_GROUPS = [
+export const MENU_GROUPS = [
   {
     label: 'About',
     children: [
@@ -36,7 +36,7 @@ const MENU_GROUPS = [
   },
 ];
 
-const CONTACT = { label: 'Contact', target: 'contact' };
+export const CONTACT = { label: 'Contact', target: 'contact' };
 
 // Accordionアニメーション用コンポーネント
 function AnimatedAccordion({ open, children }: { open: boolean, children: React.ReactNode }) {
