@@ -43,11 +43,9 @@ export const FloatingNav = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ease-in-out px-4 md:px-8 py-4 ${
+      className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ease-in-out px-4 md:px-8 h-20 ${
         isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
-      } ${
-        isScrolled ? 'bg-black/30 backdrop-blur-md' : 'bg-transparent'
-      } flex items-center justify-between`}
+      } bg-black/60 backdrop-blur-md flex items-center justify-between shadow-lg`}
     >
       {/* ロゴ */}
       <div className="flex-shrink-0">
