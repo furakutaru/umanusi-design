@@ -5,7 +5,6 @@ import { MENU_GROUPS, CONTACT } from './NavMenu';
 
 export const FloatingNav = () => {
   const [isVisible, setIsVisible] = useState(true);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const header = document.getElementById('top');
@@ -22,14 +21,8 @@ export const FloatingNav = () => {
 
     observer.observe(header);
 
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-
     return () => {
       observer.disconnect();
-      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
