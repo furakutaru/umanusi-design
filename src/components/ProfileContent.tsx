@@ -4,7 +4,6 @@ import { MessageHeading } from './MessageHeading';
 import { MessageSubtitle } from './MessageSubtitle';
 import { MessageBody } from './MessageBody';
 import { AccordionHeader } from './AccordionHeader';
-import { ExternalLinkIcon } from './ExternalLinkIcon';
 
 interface ProfileContentProps {
   headingRef: React.RefObject<HTMLDivElement>;

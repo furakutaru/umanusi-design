@@ -110,7 +110,7 @@ export function NoteSlider({ notes }: NoteSliderProps) {
         >
           {notes.map((note) => (
             <div key={note.id} className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3">
-              <NoteCard {...note} />
+              <NoteCard imageSrc={note.imageSrc} title={note.title} url={note.url} />
             </div>
           ))}
         </div>

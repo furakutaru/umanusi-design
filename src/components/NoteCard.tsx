@@ -3,14 +3,12 @@ import Image from "next/image";
 import { ExternalLinkIcon } from "./ExternalLinkIcon";
 
 interface NoteCardProps {
-  id: string;
   imageSrc: string;
   title: string;
   url: string;
 }
 
 export function NoteCard({
-  id,
   imageSrc,
   title,
   url
