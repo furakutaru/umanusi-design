@@ -81,9 +81,11 @@ export function ServiceList() {
                         href={item.url} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="text-base text-gray-900 border-b border-gray-900 hover:text-red-600 hover:border-red-600 transition-all flex items-center gap-1 group"
+                        className="text-base text-gray-900 hover:text-red-600 transition-all flex items-center gap-1 group"
                       >
-                        <span>{item.name}</span>
+                        <span className="underline underline-offset-4 decoration-1 decoration-gray-900 group-hover:decoration-red-600">
+                          {item.name}
+                        </span>
                         <ExternalLinkIcon className="w-3.5 h-3.5 stroke-current opacity-70 group-hover:opacity-100" />
                       </a>
                     ) : (
