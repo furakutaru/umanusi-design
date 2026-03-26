@@ -4,6 +4,7 @@ import { MessageHeading } from './MessageHeading';
 import { MessageSubtitle } from './MessageSubtitle';
 import { MessageBody } from './MessageBody';
 import { AccordionHeader } from './AccordionHeader';
+import { ExternalLinkIcon } from './ExternalLinkIcon';
 
 interface ProfileContentProps {
   headingRef: React.RefObject<HTMLDivElement>;
@@ -70,7 +71,25 @@ export const ProfileContent = ({ headingRef, headingClassName, contentRef, conte
             </div>
           </div>
         </div>
+
+        {/* noteセクションへの誘導 */}
+        <div className="mt-8 flex justify-start">
+          <a
+            href="#note"
+            className="flex items-center gap-2 text-red-600 font-bold hover:text-red-700 transition-colors group"
+          >
+            <span>noteでより詳しいストーリーを読む</span>
+            <svg 
+              className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   );
-}; 
+};

@@ -57,7 +57,7 @@ export const Footer = () => {
               rel="noopener noreferrer"
               className="text-white text-sm underline hover:text-gray-200 transition-colors"
             >
-              BLOG
+              note (BLOG)
             </a>
             <a
               href="https://umamawari.stores.jp/"

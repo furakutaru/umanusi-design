@@ -11,6 +11,7 @@ import PrintPrice from '../components/PrintPrice';
 import { ServiceList } from '../components/ServiceList';
 import Process from '../components/Process';
 import FAQ from '../components/FAQ';
+import NoteSection from '../components/NoteSection';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
         <CTAArea />
         <Process />
         <FAQ />
+        <NoteSection />
       </main>
       <Footer />
     </>
