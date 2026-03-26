@@ -2,19 +2,45 @@
 import React from "react";
 import { FeatureCard } from "./FeatureCard";
 import { useFadeInOnScroll } from "../hooks/useFadeInOnScroll";
+import { ExternalLinkIcon } from "./ExternalLinkIcon";
+
+interface ServiceItem {
+  name: string;
+  url?: string;
+}
 
 const serviceCategories = [
   {
     title: "記念品・メモリアルグッズ",
-    services: ["ぬいぐるみ", "デコチョコ", "マグカップ", "ボールペン", "QUOカード"],
+    services: [
+      { name: "ぬいぐるみ" },
+      { name: "もちもちマスコット", url: "https://note.com/furakutaru/n/n8815388819b7" },
+      { name: "デコチョコ" },
+      { name: "マグカップ" },
+      { name: "ボールペン" },
+      { name: "QUOカード" }
+    ],
   },
   {
     title: "応援グッズ・アパレル",
-    services: ["トートバッグ", "うちわ", "バッジ", "ゴム長靴", "ネクタイ/蝶ネクタイ"],
+    services: [
+      { name: "トートバッグ" },
+      { name: "うちわ" },
+      { name: "バッジ" },
+      { name: "ハンカチ", url: "https://note.com/furakutaru/n/n324bc72c4ffe" },
+      { name: "ゴム長靴" },
+      { name: "ネクタイ/蝶ネクタイ" }
+    ],
   },
   {
     title: "ロゴ・デザイン",
-    services: ["クリアファイル", "シール", "マスキングテープ", "モバイルバッテリー", "スマホケース"],
+    services: [
+      { name: "クリアファイル" },
+      { name: "シール" },
+      { name: "マスキングテープ" },
+      { name: "モバイルバッテリー" },
+      { name: "スマホケース" }
+    ],
   }
 ];
 
@@ -43,14 +69,26 @@ export function ServiceList() {
               <FeatureCard 
                 title={category.title}
                 items={category.services}
-                renderItem={(item: string, index: number, total: number) => (
+                renderItem={(item: ServiceItem, idx: number, total: number) => (
                   <li
-                    key={index}
+                    key={idx}
                     className={`flex justify-start items-center w-full py-2 ${
-                      index === total - 1 ? 'border-b-0' : 'border-b border-solid border-gray-300'
+                      idx === total - 1 ? 'border-b-0' : 'border-b border-solid border-gray-300'
                     }`}
                   >
-                    <span className="text-base text-gray-900">{item}</span>
+                    {item.url ? (
+                      <a 
+                        href={item.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-base text-gray-900 border-b border-gray-900 hover:text-red-600 hover:border-red-600 transition-all flex items-center gap-1 group"
+                      >
+                        <span>{item.name}</span>
+                        <ExternalLinkIcon className="w-3.5 h-3.5 stroke-current opacity-70 group-hover:opacity-100" />
+                      </a>
+                    ) : (
+                      <span className="text-base text-gray-900">{item.name}</span>
+                    )}
                   </li>
                 )}
               />
@@ -60,4 +98,5 @@ export function ServiceList() {
       </div>
     </section>
   );
-} 
+}
+ 
