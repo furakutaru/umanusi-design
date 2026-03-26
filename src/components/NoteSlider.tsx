@@ -97,7 +97,7 @@ export function NoteSlider({ notes }: NoteSliderProps) {
   const maxIndex = Math.max(0, notes.length - visibleCount);
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-10 md:px-14">
+    <div className="relative w-full max-w-7xl mx-auto px-12 md:px-16">
       <div 
         className="overflow-hidden"
         onTouchStart={onTouchStart}
@@ -109,7 +109,7 @@ export function NoteSlider({ notes }: NoteSliderProps) {
           className="flex transition-transform duration-500 ease-in-out"
         >
           {notes.map((note) => (
-            <div key={note.id} className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3">
+            <div key={note.id} className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-2">
               <NoteCard imageSrc={note.imageSrc} title={note.title} url={note.url} />
             </div>
           ))}
@@ -117,13 +117,13 @@ export function NoteSlider({ notes }: NoteSliderProps) {
         
         {currentIndex > 0 && (
           <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
-            <SliderArrow direction="left" onClick={handlePrev} variant="scene" className="text-red-600 bg-white/80 rounded-full shadow-sm" />
+            <SliderArrow direction="left" onClick={handlePrev} variant="scene" className="text-red-600" />
           </div>
         )}
         
         {currentIndex < maxIndex && (
           <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
-            <SliderArrow direction="right" onClick={handleNext} variant="scene" className={`text-red-600 bg-white/80 rounded-full shadow-sm ${showAttention ? 'animate-attention' : ''}`} />
+            <SliderArrow direction="right" onClick={handleNext} variant="scene" className={`text-red-600 ${showAttention ? 'animate-attention' : ''}`} />
           </div>
         )}
       </div>
