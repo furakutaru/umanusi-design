@@ -36,7 +36,7 @@ export default function ItemsPage() {
             const items = ITEMS.filter((item) => item.category === category);
             if (items.length === 0) return null;
             return (
-              <div key={category} className="mb-12 md:mb-16">
+              <div key={category} id={category} className="mb-12 md:mb-16 scroll-mt-28">
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 pb-2 border-b-2 border-red-600 inline-block">
                   {ITEM_CATEGORY_LABELS[category]}
                 </h3>

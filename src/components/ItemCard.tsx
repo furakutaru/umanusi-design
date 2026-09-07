@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import type { Item } from "../data/items";
 import { ExternalLinkIcon } from "./ExternalLinkIcon";
 
@@ -35,12 +36,13 @@ export const ItemCard = ({ item }: { item: Item }) => {
         <p className="text-sm text-gray-600 flex-1">{item.description}</p>
         <div className="flex flex-wrap gap-1.5">
           {item.tags.map((tag) => (
-            <span
+            <Link
               key={tag}
-              className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-600"
+              href={`/items#${item.category}`}
+              className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-800 transition-colors"
             >
               #{tag}
-            </span>
+            </Link>
           ))}
         </div>
         {item.price && (

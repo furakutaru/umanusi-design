@@ -34,7 +34,7 @@ export const ITEMS: Item[] = [
     description: "実際の蹄鉄を使った記念盾。引退記念・勝利記念にも。",
     tags: ["記念", "引退記念", "勝利記念"],
     price: "20,000〜",
-    priceNote: "デザイン代＋製造代",
+    priceNote: "＋印刷代",
     featured: true,
   },
   {
@@ -46,7 +46,7 @@ export const ITEMS: Item[] = [
       "ホログラム仕様・角丸加工・ポケカ風／ウエハース風など、カード仕様もお任せください。",
     tags: ["記念", "ファンサービス", "配布"],
     price: "10,000〜",
-    priceNote: "デザイン代（一種）＋印刷代",
+    priceNote: "＋印刷代",
     featured: true,
   },
   {
@@ -58,7 +58,7 @@ export const ITEMS: Item[] = [
       "サイズ自由。馬・騎手・馬主名・レース情報など、掲載要素もご相談で決められます。",
     tags: ["記念", "勝利記念", "インテリア"],
     price: "10,000〜",
-    priceNote: "デザイン代＋製造代",
+    priceNote: "＋印刷代",
     featured: true,
   },
   {
@@ -96,7 +96,7 @@ export const ITEMS: Item[] = [
     description: "応援Tシャツ・記念Tシャツなど。デザインから対応します。",
     tags: ["応援", "記念"],
     price: "10,000〜",
-    priceNote: "デザイン代＋印刷代",
+    priceNote: "＋印刷代",
     featured: true,
   },
   {
@@ -117,7 +117,7 @@ export const ITEMS: Item[] = [
     description: "口取り式で馬名を書き込む応援タオルにも。薄手・厚手を用途で選べます。",
     tags: ["応援", "記念"],
     price: "10,000〜",
-    priceNote: "デザイン代＋製造代",
+    priceNote: "＋印刷代",
     featured: true,
   },
   {
@@ -128,7 +128,7 @@ export const ITEMS: Item[] = [
       "入稿から出荷まで最短2日程度。軽い生地もあり、電車での持参にも便利です。競馬場への掲示申請が必要な場合は、デザイン確定後に早めに申請を進められるよう対応します。",
     tags: ["応援", "勝利記念"],
     price: "10,000〜",
-    priceNote: "デザイン代＋印刷代",
+    priceNote: "＋印刷代",
   },
   {
     id: "tote-bag",
@@ -155,7 +155,7 @@ export const ITEMS: Item[] = [
       "愛馬のイラストや勝負服モチーフなど、自分だけのデザインが作れます。追加印刷にも対応しており、修正なしなら印刷実費のみで再注文できます。デザイン変更がある場合は¥1,500程度＋印刷代。",
     tags: ["馬主活動", "ブランド"],
     price: "8,000〜",
-    priceNote: "デザイン代＋印刷代（実費）",
+    priceNote: "＋印刷代",
     featured: true,
   },
   {
@@ -202,7 +202,7 @@ export const ITEMS: Item[] = [
     description: "ファンサービスやちょっとした配布用にも。",
     tags: ["ファンサービス", "交流"],
     price: "10,000〜",
-    priceNote: "デザイン代＋印刷代",
+    priceNote: "＋印刷代",
   },
   {
     id: "mug",
