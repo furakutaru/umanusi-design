@@ -13,6 +13,12 @@ interface ProfileContentProps {
   contentClassName: string;
 }
 
+const VALUE_POINTS = [
+  "作りたいけど何がいいか分からない、を一緒に形にします",
+  "勝利の物語や愛馬の個性、血統背景をデザインに落とし込みます",
+  "デザインから印刷会社との連携、納品まで一貫して代行します",
+];
+
 export const ProfileContent = ({ headingRef, headingClassName, contentRef, contentClassName }: ProfileContentProps) => {
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
   const accordionContentRef = useRef<HTMLDivElement>(null);
@@ -31,31 +37,32 @@ export const ProfileContent = ({ headingRef, headingClassName, contentRef, conte
 
       <div ref={contentRef} className={contentClassName} style={{ transitionDelay: '0.3s' }}>
         <MessageBody>
-          はじめまして馬主デザイナーのUMAです。
-          <br />
-          このサービスを始めたのは、一般的なデザインでは表現しきれない、競馬の世界特有の
-          「熱量」や「物語」を形にしたかったから。
-          <br />
-          勝負服の色に込められた想いや、一戦一戦のドラマ。
-          <br />
-          その価値を、私は<AnimatedUnderline delay={0.4}>あなたの次くらい理解しています。</AnimatedUnderline>
-          <br />
+          はじめまして、馬主デザイナーのUMAです。競馬の世界特有の「熱量」や「物語」を、
+          一般的なデザインでは表現しきれない形で残したくてこのサービスを始めました。
           <br />
           あなたの愛馬との絆、厩舎の誇りを、唯一無二のデザインへ。
-          <br />
-          一つひとつの想いを丁寧に翻訳し、記憶に残る宝物をお届けすることをお約束します。
+          <AnimatedUnderline delay={0.4}>一つひとつの想いを丁寧に翻訳します。</AnimatedUnderline>
         </MessageBody>
 
-        <div className="mt-8 md:mt-12 w-full md:max-w-[700px] mx-auto md:mx-0">
-          <AccordionHeader 
-            title="プロフィール" 
-            isOpen={isAccordionOpen} 
-            setIsOpen={setIsAccordionOpen} 
+        <ul className="mt-2 mb-6 md:mb-8 space-y-2">
+          {VALUE_POINTS.map((point) => (
+            <li key={point} className="flex items-start gap-2 text-sm md:text-base text-gray-800">
+              <span className="text-red-600 font-bold flex-shrink-0">・</span>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="w-full md:max-w-[700px] mx-auto md:mx-0">
+          <AccordionHeader
+            title="プロフィール"
+            isOpen={isAccordionOpen}
+            setIsOpen={setIsAccordionOpen}
           />
           <div
             ref={accordionContentRef}
             className="transition-all duration-500 ease-in-out overflow-hidden bg-black rounded-b-xl"
-            style={{ 
+            style={{
               maxHeight: isAccordionOpen ? `${accordionContentRef.current ? accordionContentRef.current.scrollHeight : 0}px` : '0px',
               opacity: isAccordionOpen ? 1 : 0,
             }}
@@ -79,10 +86,10 @@ export const ProfileContent = ({ headingRef, headingClassName, contentRef, conte
             className="flex items-center gap-2 text-red-600 font-bold hover:text-red-700 transition-colors group"
           >
             <span>noteでより詳しいストーリーを読む</span>
-            <svg 
-              className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" 
-              fill="none" 
-              viewBox="0 0 24 24" 
+            <svg
+              className="w-5 h-5 group-hover:translate-y-0.5 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
               stroke="currentColor"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

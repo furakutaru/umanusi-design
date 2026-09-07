@@ -8,9 +8,7 @@ export default function HeroHeader() {
   const fadeRef = useFadeInOnScroll();
 
   useEffect(() => {
-    console.log('useEffect実行');
     const video = videoRef.current;
-    console.log('videoRef.current:', video);
     if (video) {
       video.playbackRate = 0.5; // スローモーション
       video.loop = true; // ループ再生を明示
@@ -23,7 +21,6 @@ export default function HeroHeader() {
         const scale = 1.08 + Math.min(scrollY, 400) * 0.0007;
         const transformValue = `translateY(${translateY}px) scale(${scale})`;
         video.style.transform = transformValue;
-        console.log('scrollY:', scrollY, 'transform:', transformValue);
       }
     };
     window.addEventListener('scroll', handleScroll);
