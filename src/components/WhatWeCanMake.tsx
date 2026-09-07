@@ -44,12 +44,9 @@ export const WhatWeCanMake = () => {
         <div className="mt-8 text-center">
           <Link
             href="/items"
-            className="inline-flex items-center gap-2 text-red-600 font-bold hover:text-red-700 transition-colors"
+            className="inline-block px-8 py-4 rounded-full bg-white text-red-600 text-lg font-bold shadow-md border border-red-600 border-solid transition-all duration-200 ease-out hover:bg-red-600 hover:text-white hover:scale-105"
           >
-            <span className="underline underline-offset-4">対応アイテムをすべて見る</span>
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            対応アイテムをすべて見る
           </Link>
         </div>
       </div>
