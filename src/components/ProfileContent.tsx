@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useRef } from 'react';
+import Link from 'next/link';
 import { MessageHeading } from './MessageHeading';
 import { MessageSubtitle } from './MessageSubtitle';
 import { MessageBody } from './MessageBody';
@@ -79,8 +80,22 @@ export const ProfileContent = ({ headingRef, headingClassName, contentRef, conte
           </div>
         </div>
 
-        {/* noteセクションへの誘導 */}
-        <div className="mt-8 flex justify-start">
+        {/* 詳細プロフィール・noteセクションへの誘導 */}
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-6">
+          <Link
+            href="/about"
+            className="flex items-center gap-2 text-red-600 font-bold hover:text-red-700 transition-colors group"
+          >
+            <span>プロフィールを詳しく見る</span>
+            <svg
+              className="w-5 h-5 group-hover:translate-x-0.5 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
           <a
             href="#note"
             className="flex items-center gap-2 text-red-600 font-bold hover:text-red-700 transition-colors group"

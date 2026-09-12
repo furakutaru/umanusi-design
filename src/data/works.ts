@@ -4,6 +4,14 @@ export interface Work {
   title: string;
   description: string;
   featured?: boolean;
+  // 以下は判明次第、順次追加していく詳細情報（未設定の場合は詳細ページで非表示）
+  background?: string;
+  requestDetail?: string;
+  deliverables?: string;
+  duration?: string;
+  quantity?: string;
+  useScene?: string;
+  customerComment?: string;
 }
 
 export const WORKS: Work[] = [

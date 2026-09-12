@@ -20,6 +20,7 @@ export interface Item {
   tags: string[];
   price?: string;
   priceNote?: string;
+  leadTime?: string;
   featured?: boolean;
   externalUrl?: string;
 }

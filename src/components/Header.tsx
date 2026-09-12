@@ -8,7 +8,7 @@ import { sendEvent } from '../lib/analytics';
 const MENU_GROUPS = [
   {
     label: 'About',
-    children: [{ label: '馬主デザイナー', href: '/#profile' }],
+    children: [{ label: '馬主デザイナー', href: '/about' }],
   },
   {
     label: 'できること',

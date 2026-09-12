@@ -16,23 +16,29 @@ export const ItemCard = ({ item }: { item: Item }) => {
 
   return (
     <article className="flex flex-col bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden h-full">
-      <div className="relative w-full aspect-[4/3] bg-gray-100">
-        {item.image ? (
-          <Image
-            src={item.image}
-            alt={item.name}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 50vw, 25vw"
-          />
-        ) : (
-          <div className={`w-full h-full flex items-center justify-center ${categoryColor}`}>
-            <span className="text-lg font-bold text-center px-4">{item.name}</span>
-          </div>
-        )}
-      </div>
+      <Link href={`/items/${item.id}`} className="group">
+        <div className="relative w-full aspect-[4/3] bg-gray-100">
+          {item.image ? (
+            <Image
+              src={item.image}
+              alt={item.name}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 768px) 50vw, 25vw"
+            />
+          ) : (
+            <div className={`w-full h-full flex items-center justify-center ${categoryColor}`}>
+              <span className="text-lg font-bold text-center px-4">{item.name}</span>
+            </div>
+          )}
+        </div>
+      </Link>
       <div className="flex flex-col flex-1 p-4 gap-2">
-        <h3 className="text-base font-bold text-gray-900">{item.name}</h3>
+        <Link href={`/items/${item.id}`}>
+          <h3 className="text-base font-bold text-gray-900 hover:text-red-600 transition-colors">
+            {item.name}
+          </h3>
+        </Link>
         <p className="text-sm text-gray-600 flex-1">{item.description}</p>
         <div className="flex flex-wrap gap-1.5">
           {item.tags.map((tag) => (
