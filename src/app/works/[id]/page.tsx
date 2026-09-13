@@ -67,9 +67,12 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
           )}
 
           {work.customerComment && (
-            <blockquote className="border-l-4 border-red-600 pl-4 mb-10 text-gray-300 italic">
-              {work.customerComment}
-            </blockquote>
+            <div className="mb-10">
+              <p className="text-xs text-gray-400 mb-2">お客様のコメント</p>
+              <blockquote className="border-l-4 border-red-600 pl-4 text-gray-300 italic">
+                {work.customerComment}
+              </blockquote>
+            </div>
           )}
 
           <div className="flex justify-center mb-14">

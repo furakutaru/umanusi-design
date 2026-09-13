@@ -33,7 +33,7 @@ export const ITEMS: Item[] = [
     category: "memorial",
     image: "/portfolio-south-express-shield.webp",
     description: "実際の蹄鉄を使った記念盾。引退記念・勝利記念にも。",
-    tags: ["記念", "引退記念", "勝利記念"],
+    tags: ["記念"],
     price: "20,000〜",
     priceNote: "＋印刷代",
     featured: true,
@@ -45,7 +45,7 @@ export const ITEMS: Item[] = [
     image: "/portfolio-age-runner-card.webp",
     description:
       "ホログラム仕様・角丸加工・ポケカ風／ウエハース風など、カード仕様もお任せください。",
-    tags: ["記念", "ファンサービス", "配布"],
+    tags: ["記念", "ファンサービス"],
     price: "10,000〜",
     priceNote: "＋印刷代",
     featured: true,
@@ -57,7 +57,7 @@ export const ITEMS: Item[] = [
     image: "/portfolio-firmarpoint-stand.webp",
     description:
       "サイズ自由。馬・騎手・馬主名・レース情報など、掲載要素もご相談で決められます。",
-    tags: ["記念", "勝利記念", "インテリア"],
+    tags: ["記念"],
     price: "10,000〜",
     priceNote: "＋印刷代",
     featured: true,
@@ -68,7 +68,7 @@ export const ITEMS: Item[] = [
     category: "memorial",
     image: "/portfolio-pick-and-roll-photo.webp",
     description: "L版の勝利写真を額装やパネルなどにカスタマイズします。",
-    tags: ["記念", "勝利記念"],
+    tags: ["記念"],
     price: "20,000〜",
   },
   {
@@ -76,7 +76,7 @@ export const ITEMS: Item[] = [
     name: "記念冊子",
     category: "memorial",
     description: "愛馬の歩みをまとめた記念冊子を制作します。",
-    tags: ["記念", "引退記念"],
+    tags: ["記念"],
     price: "20,000〜",
   },
   {
@@ -106,7 +106,7 @@ export const ITEMS: Item[] = [
     category: "wear",
     image: "/portfolio-sun-or-slice-cap.webp",
     description: "関係者へのプレゼントにも。帽子タイプや刺繍なども選べます。",
-    tags: ["応援", "ブランド"],
+    tags: ["応援", "馬主活動"],
     price: "15,000〜",
     featured: true,
   },
@@ -127,7 +127,7 @@ export const ITEMS: Item[] = [
     category: "wear",
     description:
       "入稿から出荷まで最短2日程度。軽い生地もあり、電車での持参にも便利です。競馬場への掲示申請が必要な場合は、デザイン確定後に早めに申請を進められるよう対応します。",
-    tags: ["応援", "勝利記念"],
+    tags: ["応援", "記念"],
     price: "10,000〜",
     priceNote: "＋印刷代",
   },
@@ -154,7 +154,7 @@ export const ITEMS: Item[] = [
     image: "/item11.webp",
     description:
       "愛馬のイラストや勝負服モチーフなど、自分だけのデザインが作れます。追加印刷にも対応しており、修正なしなら印刷実費のみで再注文できます。デザイン変更がある場合は¥1,500程度＋印刷代。",
-    tags: ["馬主活動", "ブランド"],
+    tags: ["馬主活動"],
     price: "8,000〜",
     priceNote: "＋印刷代",
     featured: true,
@@ -176,7 +176,7 @@ export const ITEMS: Item[] = [
     image: "/portfolio-horse-logo.webp",
     description:
       "馬名の由来やキャラクター・気性からスローガンまで考案してご提案します。",
-    tags: ["ブランド", "馬主活動"],
+    tags: ["馬主活動"],
     price: "30,000〜",
     featured: true,
   },
@@ -185,14 +185,14 @@ export const ITEMS: Item[] = [
     name: "印刷物・販促物",
     category: "business",
     description: "パンフレット、ポスター、チラシ、のぼりなど、目的に応じたデザインを制作します。",
-    tags: ["馬主活動", "販促"],
+    tags: ["馬主活動"],
   },
   {
     id: "sns-web",
     name: "SNS用画像・WEBバナー",
     category: "business",
     description: "SNS投稿用画像やWEBサイトのバナーなど、オンラインでの発信を支援します。",
-    tags: ["馬主活動", "ブランド"],
+    tags: ["馬主活動"],
   },
 
   // その他
@@ -210,7 +210,7 @@ export const ITEMS: Item[] = [
     name: "マグカップ",
     category: "other",
     description: "日常使いできるノベルティに。",
-    tags: ["日常使い", "交流"],
+    tags: ["交流"],
   },
   {
     id: "badge",
@@ -231,7 +231,7 @@ export const ITEMS: Item[] = [
     name: "もちもちマスコット",
     category: "other",
     description: "手のひらサイズの柔らかいマスコット。",
-    tags: ["交流", "日常使い"],
+    tags: ["交流"],
     externalUrl: "https://note.com/furakutaru/n/n8815388819b7",
   },
   {
@@ -239,7 +239,7 @@ export const ITEMS: Item[] = [
     name: "ハンカチ",
     category: "other",
     description: "日常使いしやすい記念アイテムです。",
-    tags: ["日常使い", "記念"],
+    tags: ["交流", "記念"],
     externalUrl: "https://note.com/furakutaru/n/n324bc72c4ffe",
   },
 ];
