@@ -21,6 +21,9 @@ export interface Item {
   price?: string;
   priceNote?: string;
   leadTime?: string;
+  // 以下は判明次第、順次追加していく詳細情報（未設定の場合は詳細ページで非表示）
+  specNote?: string;
+  useCases?: string;
   featured?: boolean;
   externalUrl?: string;
 }
@@ -37,6 +40,9 @@ export const ITEMS: Item[] = [
     price: "20,000〜",
     priceNote: "＋印刷代",
     featured: true,
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "trading-card",
@@ -49,6 +55,9 @@ export const ITEMS: Item[] = [
     price: "10,000〜",
     priceNote: "＋印刷代",
     featured: true,
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "acrylic-stand",
@@ -61,6 +70,9 @@ export const ITEMS: Item[] = [
     price: "10,000〜",
     priceNote: "＋印刷代",
     featured: true,
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "victory-photo",
@@ -70,6 +82,9 @@ export const ITEMS: Item[] = [
     description: "L版の勝利写真を額装やパネルなどにカスタマイズします。",
     tags: ["記念"],
     price: "20,000〜",
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "memorial-booklet",
@@ -78,6 +93,9 @@ export const ITEMS: Item[] = [
     description: "愛馬の歩みをまとめた記念冊子を制作します。",
     tags: ["記念"],
     price: "20,000〜",
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "plush",
@@ -86,6 +104,9 @@ export const ITEMS: Item[] = [
     description:
       "愛馬のオリジナルぬいぐるみも制作可能。サンプル制作→量産の流れで対応します。",
     tags: ["記念", "交流"],
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
 
   // ウェア・応援
@@ -99,6 +120,9 @@ export const ITEMS: Item[] = [
     price: "10,000〜",
     priceNote: "＋印刷代",
     featured: true,
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "cap",
@@ -109,6 +133,9 @@ export const ITEMS: Item[] = [
     tags: ["応援", "馬主活動"],
     price: "15,000〜",
     featured: true,
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "towel",
@@ -120,6 +147,9 @@ export const ITEMS: Item[] = [
     price: "10,000〜",
     priceNote: "＋印刷代",
     featured: true,
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "banner",
@@ -130,6 +160,9 @@ export const ITEMS: Item[] = [
     tags: ["応援", "記念"],
     price: "10,000〜",
     priceNote: "＋印刷代",
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "tote-bag",
@@ -137,6 +170,9 @@ export const ITEMS: Item[] = [
     category: "wear",
     description: "応援グッズやノベルティに。",
     tags: ["応援", "ファンサービス"],
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "uchiwa",
@@ -144,6 +180,9 @@ export const ITEMS: Item[] = [
     category: "wear",
     description: "レース観戦時の応援グッズに。",
     tags: ["応援"],
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
 
   // 馬主活動・ビジネス
@@ -158,6 +197,9 @@ export const ITEMS: Item[] = [
     price: "8,000〜",
     priceNote: "＋印刷代",
     featured: true,
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "namecard-updatable",
@@ -168,6 +210,9 @@ export const ITEMS: Item[] = [
     tags: ["馬主活動", "交流"],
     price: "100枚5,000／200枚5,500／300枚6,000",
     externalUrl: "https://note.com/furakutaru/n/n704c7f94bacc",
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "logo",
@@ -179,6 +224,9 @@ export const ITEMS: Item[] = [
     tags: ["馬主活動"],
     price: "30,000〜",
     featured: true,
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "print-materials",
@@ -186,6 +234,9 @@ export const ITEMS: Item[] = [
     category: "business",
     description: "パンフレット、ポスター、チラシ、のぼりなど、目的に応じたデザインを制作します。",
     tags: ["馬主活動"],
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "sns-web",
@@ -193,6 +244,9 @@ export const ITEMS: Item[] = [
     category: "business",
     description: "SNS投稿用画像やWEBサイトのバナーなど、オンラインでの発信を支援します。",
     tags: ["馬主活動"],
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
 
   // その他
@@ -204,6 +258,9 @@ export const ITEMS: Item[] = [
     tags: ["ファンサービス", "交流"],
     price: "10,000〜",
     priceNote: "＋印刷代",
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "mug",
@@ -211,6 +268,9 @@ export const ITEMS: Item[] = [
     category: "other",
     description: "日常使いできるノベルティに。",
     tags: ["交流"],
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "badge",
@@ -218,6 +278,9 @@ export const ITEMS: Item[] = [
     category: "other",
     description: "配布用ノベルティの定番です。",
     tags: ["ファンサービス"],
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "clear-file",
@@ -225,6 +288,9 @@ export const ITEMS: Item[] = [
     category: "other",
     description: "配布・記念どちらにも使いやすいアイテムです。",
     tags: ["ファンサービス", "記念"],
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "mochi-mascot",
@@ -233,6 +299,9 @@ export const ITEMS: Item[] = [
     description: "手のひらサイズの柔らかいマスコット。",
     tags: ["交流"],
     externalUrl: "https://note.com/furakutaru/n/n8815388819b7",
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
   {
     id: "handkerchief",
@@ -241,6 +310,9 @@ export const ITEMS: Item[] = [
     description: "日常使いしやすい記念アイテムです。",
     tags: ["交流", "記念"],
     externalUrl: "https://note.com/furakutaru/n/n324bc72c4ffe",
+    leadTime: "【ダミー】納期の目安をここに記載します。",
+    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
+    useCases: "【ダミー】具体的な活用例をここに記載します。",
   },
 ];
 

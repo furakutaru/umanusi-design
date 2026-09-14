@@ -74,24 +74,37 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
             ))}
           </div>
 
-          {(item.price || item.leadTime) && (
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
-              {item.price && (
-                <div>
-                  <p className="text-xs text-gray-500 mb-1">参考価格</p>
-                  <p className="font-bold text-red-600">
-                    <span className="text-sm">¥</span>
-                    <span className="text-xl">{item.price}</span>
-                    {item.priceNote && (
-                      <span className="ml-2 text-xs text-gray-500 font-normal">{item.priceNote}</span>
-                    )}
-                  </p>
-                </div>
-              )}
+          {item.price && (
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+              <p className="text-xs text-gray-500 mb-1">参考価格</p>
+              <p className="font-bold text-red-600">
+                <span className="text-sm">¥</span>
+                <span className="text-xl">{item.price}</span>
+                {item.priceNote && (
+                  <span className="ml-2 text-xs text-gray-500 font-normal">{item.priceNote}</span>
+                )}
+              </p>
+            </div>
+          )}
+
+          {(item.leadTime || item.specNote || item.useCases) && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               {item.leadTime && (
-                <div>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <p className="text-xs text-gray-500 mb-1">納期目安</p>
                   <p className="text-sm text-gray-800">{item.leadTime}</p>
+                </div>
+              )}
+              {item.specNote && (
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <p className="text-xs text-gray-500 mb-1">仕様</p>
+                  <p className="text-sm text-gray-800">{item.specNote}</p>
+                </div>
+              )}
+              {item.useCases && (
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 sm:col-span-2">
+                  <p className="text-xs text-gray-500 mb-1">活用例</p>
+                  <p className="text-sm text-gray-800">{item.useCases}</p>
                 </div>
               )}
             </div>
