@@ -18,8 +18,7 @@ export default function ItemsPage() {
       <section className="w-full bg-white py-12 md:py-16">
         <div className="max-w-[1200px] mx-auto px-4">
           <header className="text-center mb-6 md:mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-black">なにが作れる？</h1>
-            <h2 className="mt-4 text-lg md:text-xl font-semibold text-gray-800">対応アイテム一覧</h2>
+            <h1 className="text-3xl md:text-4xl font-bold text-black">対応アイテム一覧</h1>
           </header>
           <p className="max-w-2xl mx-auto text-center text-sm md:text-base text-gray-600 mb-4">
             ここでは「こんなものが作れる」という可能性をご紹介しています。実際の制作事例は

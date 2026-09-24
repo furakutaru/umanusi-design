@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ITEMS, ITEM_CATEGORY_LABELS } from "../../../data/items";
-import { ItemCard } from "../../../components/ItemCard";
+import { WORKS } from "../../../data/works";
+import { WorkCard } from "../../../components/WorkCard";
 import { ExternalLinkIcon } from "../../../components/ExternalLinkIcon";
 import { ConsultCTA } from "../../../components/ConsultCTA";
 
@@ -38,7 +39,9 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
   if (!item) notFound();
 
   const categoryColor = CATEGORY_COLORS[item.category] ?? CATEGORY_COLORS.other;
-  const relatedItems = ITEMS.filter((i) => i.category === item.category && i.id !== item.id).slice(0, 3);
+  const relatedWorks = (item.relatedWorkIds ?? [])
+    .map((workId) => WORKS.find((w) => w.id === workId))
+    .filter((w): w is (typeof WORKS)[number] => Boolean(w));
 
   return (
     <main className="w-full pt-20 bg-white">
@@ -126,14 +129,14 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
             <ConsultCTA location="item_detail" />
           </div>
 
-          {relatedItems.length > 0 && (
+          {relatedWorks.length > 0 && (
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-6 text-center">
-                同じカテゴリのアイテム
+                {item.name}の制作事例
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {relatedItems.map((related) => (
-                  <ItemCard key={related.id} item={related} />
+                {relatedWorks.map((work) => (
+                  <WorkCard key={work.id} work={work} />
                 ))}
               </div>
             </div>

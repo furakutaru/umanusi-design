@@ -26,6 +26,8 @@ export interface Item {
   useCases?: string;
   featured?: boolean;
   externalUrl?: string;
+  // このアイテムに対応する制作事例（src/data/works.ts の id）。詳細ページ下部に表示
+  relatedWorkIds?: string[];
 }
 
 export const ITEMS: Item[] = [
@@ -40,6 +42,7 @@ export const ITEMS: Item[] = [
     price: "20,000〜",
     priceNote: "＋印刷代",
     featured: true,
+    relatedWorkIds: ["sun-or-slice-shield", "south-express-shield", "pick-and-roll-shield"],
     leadTime: "【ダミー】納期の目安をここに記載します。",
     specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
     useCases: "【ダミー】具体的な活用例をここに記載します。",
@@ -55,6 +58,7 @@ export const ITEMS: Item[] = [
     price: "10,000〜",
     priceNote: "＋印刷代",
     featured: true,
+    relatedWorkIds: ["oken-duke-card", "age-runner-card", "firmarpoint-card"],
     leadTime: "【ダミー】納期の目安をここに記載します。",
     specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
     useCases: "【ダミー】具体的な活用例をここに記載します。",
@@ -70,6 +74,7 @@ export const ITEMS: Item[] = [
     price: "10,000〜",
     priceNote: "＋印刷代",
     featured: true,
+    relatedWorkIds: ["luminaval-stand", "firmarpoint-stand", "sun-or-slice-stand"],
     leadTime: "【ダミー】納期の目安をここに記載します。",
     specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
     useCases: "【ダミー】具体的な活用例をここに記載します。",
@@ -82,6 +87,7 @@ export const ITEMS: Item[] = [
     description: "L版の勝利写真を額装やパネルなどにカスタマイズします。",
     tags: ["記念"],
     price: "20,000〜",
+    relatedWorkIds: ["pick-and-roll-photo"],
     leadTime: "【ダミー】納期の目安をここに記載します。",
     specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
     useCases: "【ダミー】具体的な活用例をここに記載します。",
@@ -120,6 +126,7 @@ export const ITEMS: Item[] = [
     price: "10,000〜",
     priceNote: "＋印刷代",
     featured: true,
+    relatedWorkIds: ["pick-and-roll-tshirt"],
     leadTime: "【ダミー】納期の目安をここに記載します。",
     specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
     useCases: "【ダミー】具体的な活用例をここに記載します。",
@@ -133,6 +140,7 @@ export const ITEMS: Item[] = [
     tags: ["応援", "馬主活動"],
     price: "15,000〜",
     featured: true,
+    relatedWorkIds: ["sun-or-slice-cap"],
     leadTime: "【ダミー】納期の目安をここに記載します。",
     specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
     useCases: "【ダミー】具体的な活用例をここに記載します。",
@@ -147,6 +155,7 @@ export const ITEMS: Item[] = [
     price: "10,000〜",
     priceNote: "＋印刷代",
     featured: true,
+    relatedWorkIds: ["little-lily-towel", "luminaval-towel"],
     leadTime: "【ダミー】納期の目安をここに記載します。",
     specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
     useCases: "【ダミー】具体的な活用例をここに記載します。",
@@ -197,6 +206,7 @@ export const ITEMS: Item[] = [
     price: "8,000〜",
     priceNote: "＋印刷代",
     featured: true,
+    relatedWorkIds: ["hasegawa-namecard"],
     leadTime: "【ダミー】納期の目安をここに記載します。",
     specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
     useCases: "【ダミー】具体的な活用例をここに記載します。",
@@ -224,6 +234,7 @@ export const ITEMS: Item[] = [
     tags: ["馬主活動"],
     price: "30,000〜",
     featured: true,
+    relatedWorkIds: ["horse-logo"],
     leadTime: "【ダミー】納期の目安をここに記載します。",
     specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
     useCases: "【ダミー】具体的な活用例をここに記載します。",
