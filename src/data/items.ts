@@ -24,6 +24,7 @@ export interface Item {
   priceNote?: string;
   leadTime?: string;
   // 以下は判明次第、順次追加していく詳細情報（未設定の場合は詳細ページで非表示）
+  printPriceExample?: string;
   specNote?: string;
   useCases?: string;
   featured?: boolean;
@@ -276,13 +277,12 @@ export const ITEMS: Item[] = [
     name: "シール・ステッカー",
     category: "other",
     image: "/sticker-set.webp",
-    description: "ファンサービスやちょっとした配布用にも。",
+    description:
+      "配布に最適。関係者のみならずファンにも配布出来る余裕が有ります。\n比較的低コストで記念品入門として人気が有ります。\nお好きな形に出来るダイカットステッカーや基本の丸形、ビックリマンシール風など様々なタイプに対応可能。\nデザインは写真のみならずイラストとも相性◎。イラストレーターさまの活用も選定から依頼まで対応可能です。",
     tags: ["ファンサービス", "交流"],
     price: "10,000〜",
     priceNote: "＋印刷代",
-    leadTime: "【ダミー】納期の目安をここに記載します。",
-    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
-    useCases: "【ダミー】具体的な活用例をここに記載します。",
+    useCases: "関係者、ファンへの配布",
   },
   {
     id: "mug",
@@ -322,24 +322,32 @@ export const ITEMS: Item[] = [
     name: "もちもちマスコット",
     category: "other",
     image: "/mochi-mascot.webp",
-    description: "手のひらサイズの柔らかいマスコット。",
+    description:
+      "ぬいぐるみは大ロット・高額でもこのマスコットなら6個から印刷代1個1,605円〜。\n自分用・騎手・調教師・スタッフへの配布など、少人数への贈り物としても現実的なコストで作れます。\n愛馬の写真を頂ければデフォルメしてお作りいたします。",
     tags: ["交流"],
+    price: "10,000〜",
+    priceNote: "＋印刷代",
     externalUrl: "https://note.com/furakutaru/n/n8815388819b7",
-    leadTime: "【ダミー】納期の目安をここに記載します。",
-    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
-    useCases: "【ダミー】具体的な活用例をここに記載します。",
+    leadTime: "約20日（受付は3ヶ月に1度）",
+    printPriceExample: "6個 ¥9,630",
+    specNote: "約7cm、ポリエステル生地",
+    useCases: "鞄等につけていつも一緒に。贈答品にも喜ばれます。",
   },
   {
     id: "handkerchief",
     name: "ハンカチ",
     category: "other",
     image: "/handkerchief.webp",
-    description: "日常使いしやすい記念アイテムです。",
+    description:
+      "紳士の嗜み、ハンカチちり紙持ちましたか？ まだ？ なればコチラいかがでしょうか？\n日常使いから競馬場へのお供。スーツによく合うアイテムです。\nデザインテイストも選びませんので色々遊べます。\nプリントのみならずワンポイント刺しゅうやタオルハンカチも可能です。",
     tags: ["交流", "記念"],
+    price: "10,000〜",
+    priceNote: "＋印刷代",
     externalUrl: "https://note.com/furakutaru/n/n324bc72c4ffe",
-    leadTime: "【ダミー】納期の目安をここに記載します。",
-    specNote: "【ダミー】サイズ・素材などの仕様をここに記載します。",
-    useCases: "【ダミー】具体的な活用例をここに記載します。",
+    leadTime: "デザイン3日〜／印刷10日",
+    printPriceExample: "10枚 ¥9,000",
+    specNote: "35cm×35cm、綿100%。片面全面プリント（両面不可）",
+    useCases: "日常使い、競馬場のお供に。胸ポケットにさしてもおしゃれ。",
   },
 ];
 

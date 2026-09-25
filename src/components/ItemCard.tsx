@@ -39,7 +39,7 @@ export const ItemCard = ({ item }: { item: Item }) => {
             {item.name}
           </h3>
         </Link>
-        <p className="text-sm text-gray-600 flex-1">{item.description}</p>
+        <p className="text-sm text-gray-600 flex-1 line-clamp-3">{item.description}</p>
         <div className="flex flex-wrap gap-1.5">
           {item.tags.map((tag) => (
             <Link

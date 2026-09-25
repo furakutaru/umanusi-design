@@ -61,7 +61,7 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
 
           <p className="text-xs text-gray-500 mb-2">{ITEM_CATEGORY_LABELS[item.category]}</p>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{item.name}</h1>
-          <p className="text-base text-gray-700 leading-7 mb-6">{item.description}</p>
+          <p className="text-base text-gray-700 leading-7 mb-6 whitespace-pre-line">{item.description}</p>
 
           <div className="flex flex-wrap gap-1.5 mb-6">
             {item.tags.map((tag) => (
@@ -88,12 +88,18 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
             </div>
           )}
 
-          {(item.leadTime || item.specNote || item.useCases) && (
+          {(item.leadTime || item.printPriceExample || item.specNote || item.useCases) && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               {item.leadTime && (
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <p className="text-xs text-gray-500 mb-1">納期目安</p>
                   <p className="text-sm text-gray-800">{item.leadTime}</p>
+                </div>
+              )}
+              {item.printPriceExample && (
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <p className="text-xs text-gray-500 mb-1">参考印刷代</p>
+                  <p className="text-sm text-gray-800">{item.printPriceExample}</p>
                 </div>
               )}
               {item.specNote && (
