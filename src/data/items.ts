@@ -96,6 +96,7 @@ export const ITEMS: Item[] = [
     id: "memorial-booklet",
     name: "記念冊子",
     category: "memorial",
+    image: "/memorial-booklet.webp",
     description: "愛馬の歩みをまとめた記念冊子を制作します。",
     tags: ["記念"],
     price: "20,000〜",
@@ -165,6 +166,7 @@ export const ITEMS: Item[] = [
     id: "banner",
     name: "横断幕",
     category: "wear",
+    image: "/banner.webp",
     description:
       "入稿から出荷まで最短2日程度。軽い生地もあり、電車での持参にも便利です。競馬場への掲示申請が必要な場合は、デザイン確定後に早めに申請を進められるよう対応します。",
     tags: ["応援", "記念"],
@@ -258,6 +260,7 @@ export const ITEMS: Item[] = [
     id: "sns-web",
     name: "SNS用画像・WEBバナー",
     category: "business",
+    image: "/sns-web.webp",
     description: "SNS投稿用画像やWEBサイトのバナーなど、オンラインでの発信を支援します。",
     tags: ["馬主活動"],
     leadTime: "【ダミー】納期の目安をここに記載します。",
