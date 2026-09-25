@@ -16,6 +16,8 @@ export interface Item {
   name: string;
   category: ItemCategory;
   image?: string;
+  // 詳細ページでギャラリー表示する複数画像。未指定の場合は image 1枚のみ表示
+  images?: string[];
   description: string;
   tags: string[];
   price?: string;

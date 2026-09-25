@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ITEMS, ITEM_CATEGORY_LABELS } from "../../../data/items";
 import { WORKS } from "../../../data/works";
 import { WorkCard } from "../../../components/WorkCard";
+import { ItemImageGallery } from "../../../components/ItemImageGallery";
 import { ExternalLinkIcon } from "../../../components/ExternalLinkIcon";
 import { ConsultCTA } from "../../../components/ConsultCTA";
 
@@ -39,6 +39,7 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
   if (!item) notFound();
 
   const categoryColor = CATEGORY_COLORS[item.category] ?? CATEGORY_COLORS.other;
+  const galleryImages = item.images ?? (item.image ? [item.image] : []);
   const relatedWorks = (item.relatedWorkIds ?? [])
     .map((workId) => WORKS.find((w) => w.id === workId))
     .filter((w): w is (typeof WORKS)[number] => Boolean(w));
@@ -51,15 +52,12 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
             ← 対応アイテム一覧に戻る
           </Link>
 
-          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden mb-8">
-            {item.image ? (
-              <Image src={item.image} alt={item.name} fill className="object-cover" priority />
-            ) : (
-              <div className={`w-full h-full flex items-center justify-center ${categoryColor}`}>
-                <span className="text-2xl font-bold text-center px-4">{item.name}</span>
-              </div>
-            )}
-          </div>
+          <ItemImageGallery
+            images={galleryImages}
+            alt={item.name}
+            placeholderText={item.name}
+            placeholderColorClass={categoryColor}
+          />
 
           <p className="text-xs text-gray-500 mb-2">{ITEM_CATEGORY_LABELS[item.category]}</p>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{item.name}</h1>
