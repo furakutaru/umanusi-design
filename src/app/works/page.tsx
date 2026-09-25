@@ -19,11 +19,10 @@ export default function WorksPage() {
             <h1 className="text-3xl md:text-4xl font-bold text-white">制作事例</h1>
           </header>
           <p className="max-w-2xl mx-auto text-center text-sm md:text-base text-gray-300 mb-10 md:mb-14">
-            これまでの制作実績の一部をご紹介します。「こんなものも作れる」という可能性は
+            対応可能アイテムは
             <Link href="/items" className="text-red-400 underline underline-offset-4 mx-1">
-              対応アイテム一覧
+              コチラ
             </Link>
-            でご覧いただけます。
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

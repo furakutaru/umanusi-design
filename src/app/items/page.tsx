@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ITEMS, ITEM_CATEGORY_LABELS, type ItemCategory } from "../../data/items";
 import { ItemCard } from "../../components/ItemCard";
 import { ConsultCTA } from "../../components/ConsultCTA";
@@ -20,13 +19,6 @@ export default function ItemsPage() {
           <header className="text-center mb-6 md:mb-8">
             <h1 className="text-3xl md:text-4xl font-bold text-black">対応アイテム一覧</h1>
           </header>
-          <p className="max-w-2xl mx-auto text-center text-sm md:text-base text-gray-600 mb-4">
-            ここでは「こんなものが作れる」という可能性をご紹介しています。実際の制作事例は
-            <Link href="/works" className="text-red-600 underline underline-offset-4 mx-1">
-              制作事例
-            </Link>
-            のページでご覧いただけます。
-          </p>
           <p className="max-w-2xl mx-auto text-center text-sm text-gray-500 mb-10 md:mb-14">
             リストに無いものもお気軽にご相談ください。
           </p>
