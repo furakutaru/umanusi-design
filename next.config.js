@@ -1,8 +1,8 @@
 module.exports = {
   images: {
-    domains: [
-      'cdn.builder.io',
-      'assets.st-note.com',
+    remotePatterns: [
+      { protocol: 'https', hostname: 'cdn.builder.io' },
+      { protocol: 'https', hostname: 'assets.st-note.com' },
     ],
   },
 }; 

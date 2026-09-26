@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
-import NavMenu from '../components/NavMenu';
-import { FloatingNav } from '../components/FloatingNav';
+import Header from '../components/Header';
+import { AnalyticsScripts } from '../components/AnalyticsScripts';
+import { ChatWidget } from '../components/ChatWidget';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "馬主デザイン | UMANUSI Design - 馬主・厩舎向けオリジナルグッズ制作",
+  title: {
+    default: "馬主デザイン | UMANUSI Design - 馬主・厩舎向けオリジナルグッズ制作",
+    template: "%s | UMANUSI Design",
+  },
   description: "馬主・牧場・厩舎の皆さまへ。愛馬との一勝を、一生の誇りに。記念品・ロゴ・名刺など、競馬にまつわるオリジナルデザイン制作はUMANUSI Designへ。",
   robots: "index, follow",
   authors: [{ name: "UMANUSI Design" }],
@@ -60,36 +63,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavMenu />
-        <FloatingNav />
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-VYY9Y5V89Q"
-          strategy="afterInteractive"
-        />
-        <Script id="ga-init" strategy="afterInteractive">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-VYY9Y5V89Q');
-        `}
-        </Script>
+        <Header />
+        <AnalyticsScripts />
         {children}
-        {/* Tawk.to Live Chat */}
-        <Script id="tawk-to" strategy="afterInteractive">
-          {`
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-              s1.async=true;
-              s1.src='https://embed.tawk.to/6a976ca9a5d272343eb98e9b/1k1fo0tos';
-              s1.charset='UTF-8';
-              s1.setAttribute('crossorigin','*');
-              s0.parentNode.insertBefore(s1,s0);
-            })();
-          `}
-        </Script>
+        <ChatWidget />
       </body>
     </html>
   );

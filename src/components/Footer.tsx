@@ -1,16 +1,11 @@
 'use client';
 import React from 'react';
-import { FooterButton } from './FooterButton';
+import { ConsultCTA } from './ConsultCTA';
+import { ContactChannels } from './ContactChannels';
+import { NOTE_URL, NETSHOP_URL } from '../data/contact';
 import { useFadeInOnScroll } from "../hooks/useFadeInOnScroll";
 
 export const Footer = () => {
-  const handleConsultationClick = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   const titleRef = useFadeInOnScroll();
   const subtitleRef = useFadeInOnScroll();
   const buttonRef = useFadeInOnScroll();
@@ -22,37 +17,22 @@ export const Footer = () => {
           <h1 ref={titleRef.ref} className={`fade-in${titleRef.isVisible ? ' is-visible' : ''} text-3xl md:text-4xl font-bold text-white text-center`}>
             ご相談・お問い合わせ
           </h1>
-          <h2 
-            ref={subtitleRef.ref} 
+          <h2
+            ref={subtitleRef.ref}
             style={{ transitionDelay: '0.3s' }}
             className={`fade-in${subtitleRef.isVisible ? ' is-visible' : ''} mt-4 text-lg md:text-xl font-semibold text-white text-center`}
           >
             ご依頼はもちろん、『こんなことは可能でしょうか？』といったご相談も
             いつでもお気軽にお寄せください。よろしくお願いいたします。
           </h2>
-          <div ref={buttonRef.ref} style={{ transitionDelay: '0.6s' }} className={`fade-in${buttonRef.isVisible ? ' is-visible' : ''} w-[90vw] md:w-[340px] py-4`}>
-            <FooterButton onClick={handleConsultationClick}>
-              制作を相談・依頼する
-            </FooterButton>
+          <div ref={buttonRef.ref} style={{ transitionDelay: '0.6s' }} className={`fade-in${buttonRef.isVisible ? ' is-visible' : ''} w-full flex justify-center`}>
+            <ConsultCTA location="footer" variant="footer" dark />
           </div>
-          <div className="text-center mt-4">
-            <p className="text-white text-sm">
-              または
-              <a
-                href="https://x.com/furakutaru"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-gray-200 transition-colors mx-1"
-              >
-                @furakutaru
-              </a>
-              でも受け付けております。
-            </p>
-          </div>
+          <ContactChannels variant="light" showFormButton={false} />
           {/* BLOG・NetShopリンク追加 */}
           <div className="flex flex-row gap-6 justify-center items-center mt-2">
             <a
-              href="https://note.com/furakutaru/m/m57888eba2c94"
+              href={NOTE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-sm underline hover:text-gray-200 transition-colors"
@@ -60,7 +40,7 @@ export const Footer = () => {
               note (BLOG)
             </a>
             <a
-              href="https://umamawari.stores.jp/"
+              href={NETSHOP_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-sm underline hover:text-gray-200 transition-colors"
@@ -81,4 +61,4 @@ export const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
