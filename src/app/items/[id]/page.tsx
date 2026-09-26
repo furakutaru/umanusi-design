@@ -81,10 +81,10 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
               <p className="font-bold text-red-600">
                 <span className="text-sm">¥</span>
                 <span className="text-xl">{item.price}</span>
-                {item.priceNote && (
-                  <span className="ml-2 text-xs text-gray-500 font-normal">{item.priceNote}</span>
-                )}
               </p>
+              {item.priceNote && (
+                <p className="mt-1 text-xs text-gray-500">{item.priceNote}</p>
+              )}
             </div>
           )}
 
@@ -93,25 +93,25 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
               {item.leadTime && (
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <p className="text-xs text-gray-500 mb-1">納期目安</p>
-                  <p className="text-sm text-gray-800">{item.leadTime}</p>
+                  <p className="text-sm text-gray-800 whitespace-pre-line">{item.leadTime}</p>
                 </div>
               )}
               {item.printPriceExample && (
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <p className="text-xs text-gray-500 mb-1">参考印刷代</p>
-                  <p className="text-sm text-gray-800">{item.printPriceExample}</p>
+                  <p className="text-sm text-gray-800 whitespace-pre-line">{item.printPriceExample}</p>
                 </div>
               )}
               {item.specNote && (
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <p className="text-xs text-gray-500 mb-1">仕様</p>
-                  <p className="text-sm text-gray-800">{item.specNote}</p>
+                  <p className="text-sm text-gray-800 whitespace-pre-line">{item.specNote}</p>
                 </div>
               )}
               {item.useCases && (
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 sm:col-span-2">
                   <p className="text-xs text-gray-500 mb-1">活用例</p>
-                  <p className="text-sm text-gray-800">{item.useCases}</p>
+                  <p className="text-sm text-gray-800 whitespace-pre-line">{item.useCases}</p>
                 </div>
               )}
             </div>

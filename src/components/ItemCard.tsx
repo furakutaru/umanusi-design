@@ -52,12 +52,14 @@ export const ItemCard = ({ item }: { item: Item }) => {
           ))}
         </div>
         {item.price && (
-          <div className="mt-1 flex items-baseline justify-between">
+          <div className="mt-1">
             <span className="font-bold text-red-600">
               <span className="text-sm">¥</span>
               <span className="text-lg">{item.price}</span>
             </span>
-            {item.priceNote && <span className="text-xs text-gray-500">{item.priceNote}</span>}
+            {item.priceNote && (
+              <span className="block text-xs text-gray-500 line-clamp-1">{item.priceNote}</span>
+            )}
           </div>
         )}
         {item.externalUrl && (
