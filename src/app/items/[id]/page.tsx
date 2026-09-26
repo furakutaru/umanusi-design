@@ -43,6 +43,9 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
   const relatedWorks = (item.relatedWorkIds ?? [])
     .map((workId) => WORKS.find((w) => w.id === workId))
     .filter((w): w is (typeof WORKS)[number] => Boolean(w));
+  const crossSellItem = item.crossSellItemId
+    ? ITEMS.find((i) => i.id === item.crossSellItemId)
+    : undefined;
 
   return (
     <main className="w-full pt-20 bg-white">
@@ -115,6 +118,20 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
                 </div>
               )}
             </div>
+          )}
+
+          {crossSellItem && (
+            <Link
+              href={`/items/${crossSellItem.id}`}
+              className="block bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6 hover:bg-amber-100 transition-colors"
+            >
+              <p className="text-sm text-gray-700">
+                こちらもご検討ください：
+                <span className="ml-1 font-bold text-red-600 underline underline-offset-4">
+                  {item.crossSellLabel ?? crossSellItem.name}
+                </span>
+              </p>
+            </Link>
           )}
 
           {item.externalUrl && (
