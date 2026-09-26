@@ -39,7 +39,9 @@ export const ItemCard = ({ item }: { item: Item }) => {
             {item.name}
           </h3>
         </Link>
-        <p className="text-sm text-gray-600 flex-1 line-clamp-3">{item.description}</p>
+        <div className="flex-1 min-h-0">
+          <p className="text-sm text-gray-600 line-clamp-3">{item.description}</p>
+        </div>
         <div className="flex flex-wrap gap-1.5">
           {item.tags.map((tag) => (
             <Link
@@ -58,7 +60,7 @@ export const ItemCard = ({ item }: { item: Item }) => {
               <span className="text-lg">{item.price}</span>
             </span>
             {item.priceNote && (
-              <span className="block text-xs text-gray-500 line-clamp-1">{item.priceNote}</span>
+              <span className="text-xs text-gray-500 line-clamp-1">{item.priceNote}</span>
             )}
           </div>
         )}
