@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { WORKS, type Work } from "../../../data/works";
+import { WORKS } from "../../../data/works";
+import { ITEMS } from "../../../data/items";
 import { WorkCard } from "../../../components/WorkCard";
+import { ExternalLinkIcon } from "../../../components/ExternalLinkIcon";
 import { ConsultCTA } from "../../../components/ConsultCTA";
 
 interface WorkDetailPageProps {
@@ -24,20 +26,12 @@ export async function generateMetadata({ params }: WorkDetailPageProps): Promise
   };
 }
 
-const DETAIL_FIELDS: { key: keyof Work; label: string }[] = [
-  { key: "background", label: "制作背景" },
-  { key: "requestDetail", label: "依頼内容・課題" },
-  { key: "deliverables", label: "制作物" },
-  { key: "duration", label: "制作期間" },
-  { key: "quantity", label: "数量" },
-  { key: "useScene", label: "利用場面" },
-];
-
 export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
   const { id } = await params;
   const work = WORKS.find((w) => w.id === id);
   if (!work) notFound();
 
+  const relatedItems = ITEMS.filter((item) => item.relatedWorkIds?.includes(work.id));
   const otherWorks = WORKS.filter((w) => w.id !== work.id).slice(0, 3);
 
   return (
@@ -55,24 +49,44 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
           <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">{work.title}</h1>
           <p className="text-base text-gray-300 leading-7 mb-8">{work.description}</p>
 
-          {DETAIL_FIELDS.some((field) => work[field.key]) && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              {DETAIL_FIELDS.filter((field) => work[field.key]).map((field) => (
-                <div key={field.key} className="bg-neutral-800 rounded-lg p-4">
-                  <p className="text-xs text-gray-400 mb-1">{field.label}</p>
-                  <p className="text-sm text-white">{work[field.key]}</p>
-                </div>
+          {work.story && (
+            <div className="text-base text-gray-200 leading-8 mb-8 space-y-4">
+              {work.story.split("\n").map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
               ))}
             </div>
           )}
 
-          {work.customerComment && (
-            <div className="mb-10">
-              <p className="text-xs text-gray-400 mb-2">お客様のコメント</p>
-              <blockquote className="border-l-4 border-red-600 pl-4 text-gray-300 italic">
-                {work.customerComment}
-              </blockquote>
+          {relatedItems.length > 0 && (
+            <div className="flex flex-col gap-2 mb-6">
+              {relatedItems.map((item) => (
+                <Link
+                  key={item.id}
+                  href={`/items/${item.id}`}
+                  className="block bg-neutral-800 border border-neutral-700 rounded-lg p-4 hover:bg-neutral-700 transition-colors"
+                >
+                  <p className="text-sm text-gray-300">
+                    このデザインは
+                    <span className="mx-1 font-bold text-red-400 underline underline-offset-4">
+                      {item.name}
+                    </span>
+                    のご依頼です（料金・納期の目安はこちら）
+                  </p>
+                </Link>
+              ))}
             </div>
+          )}
+
+          {work.noteUrl && (
+            <a
+              href={work.noteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm text-red-400 hover:text-red-300 mb-10"
+            >
+              <span className="underline underline-offset-4">noteで制作の背景を読む</span>
+              <ExternalLinkIcon className="w-3.5 h-3.5" />
+            </a>
           )}
 
           <div className="flex justify-center mb-14">
