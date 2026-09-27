@@ -101,7 +101,7 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
               )}
               {item.printPriceExample && (
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <p className="text-xs text-gray-500 mb-1">参考印刷代</p>
+                  <p className="text-xs text-gray-500 mb-1">{item.printPriceLabel ?? "参考印刷代"}</p>
                   <p className="text-sm text-gray-800 whitespace-pre-line">{item.printPriceExample}</p>
                 </div>
               )}
