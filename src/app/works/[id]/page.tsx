@@ -32,7 +32,11 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
   if (!work) notFound();
 
   const relatedItems = ITEMS.filter((item) => item.relatedWorkIds?.includes(work.id));
-  const otherWorks = WORKS.filter((w) => w.id !== work.id).slice(0, 3);
+  const otherWorks = work.relatedWorkIds
+    ? work.relatedWorkIds
+        .map((workId) => WORKS.find((w) => w.id === workId))
+        .filter((w): w is (typeof WORKS)[number] => Boolean(w))
+    : WORKS.filter((w) => w.id !== work.id).slice(0, 3);
 
   return (
     <main className="w-full pt-20 bg-neutral-900 min-h-screen">
@@ -51,7 +55,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
 
           {work.story && (
             <div className="text-base text-gray-200 leading-8 mb-8 space-y-4">
-              {work.story.split("\n").map((paragraph, index) => (
+              {work.story.split("\n").filter((paragraph) => paragraph.trim() !== "").map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
