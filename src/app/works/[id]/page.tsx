@@ -55,9 +55,31 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
 
           {work.story && (
             <div className="text-base text-gray-200 leading-8 mb-8 space-y-4">
-              {work.story.split("\n").filter((paragraph) => paragraph.trim() !== "").map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
+              {work.story
+                .split("\n")
+                .filter((paragraph) => paragraph.trim() !== "")
+                .map((paragraph, index) =>
+                  paragraph === "[[GALLERY]]" ? (
+                    <div key={index}>
+                      {work.storyImages && work.storyImages.length > 0 && (
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                          {work.storyImages.map((src) => (
+                            <div key={src} className="relative aspect-square rounded-lg overflow-hidden">
+                              <Image src={src} alt={work.title} fill className="object-cover" />
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                      {work.storyImagesCaption && (
+                        <p className="text-xs text-gray-400 text-center mt-2">
+                          {work.storyImagesCaption}
+                        </p>
+                      )}
+                    </div>
+                  ) : (
+                    <p key={index}>{paragraph}</p>
+                  )
+                )}
             </div>
           )}
 
