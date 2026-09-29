@@ -7,6 +7,24 @@ import { ITEMS } from "../../../data/items";
 import { WorkCard } from "../../../components/WorkCard";
 import { ExternalLinkIcon } from "../../../components/ExternalLinkIcon";
 import { ConsultCTA } from "../../../components/ConsultCTA";
+import { AnimatedUnderline } from "../../../components/AnimatedUnderline";
+
+// ストーリー本文の簡易マークアップ: **強調** と __アンダーライン強調__（Q&Aと同じ演出）に対応
+function renderInlineMarkup(text: string) {
+  return text.split(/(\*\*.+?\*\*|__.+?__)/g).map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={index} className="font-bold text-white">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    if (part.startsWith("__") && part.endsWith("__")) {
+      return <AnimatedUnderline key={index}>{part.slice(2, -2)}</AnimatedUnderline>;
+    }
+    return part;
+  });
+}
 
 interface WorkDetailPageProps {
   params: Promise<{ id: string }>;
@@ -54,28 +72,39 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
               {work.story
                 .split("\n")
                 .filter((paragraph) => paragraph.trim() !== "")
-                .map((paragraph, index) =>
-                  paragraph === "[[GALLERY]]" ? (
-                    <div key={index}>
-                      {work.storyImages && work.storyImages.length > 0 && (
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                          {work.storyImages.map((src) => (
-                            <div key={src} className="relative aspect-square rounded-lg overflow-hidden">
-                              <Image src={src} alt={work.title} fill className="object-cover" />
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                      {work.storyImagesCaption && (
-                        <p className="text-xs text-gray-400 text-center mt-2">
-                          {work.storyImagesCaption}
-                        </p>
-                      )}
-                    </div>
-                  ) : (
-                    <p key={index}>{paragraph}</p>
-                  )
-                )}
+                .map((paragraph, index) => {
+                  if (paragraph === "[[GALLERY]]") {
+                    return (
+                      <div key={index}>
+                        {work.storyImages && work.storyImages.length > 0 && (
+                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                            {work.storyImages.map((src) => (
+                              <div key={src} className="relative aspect-square rounded-lg overflow-hidden">
+                                <Image src={src} alt={work.title} fill className="object-cover" />
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                        {work.storyImagesCaption && (
+                          <p className="text-xs text-gray-400 text-center mt-2">
+                            {work.storyImagesCaption}
+                          </p>
+                        )}
+                      </div>
+                    );
+                  }
+                  if (paragraph.startsWith("## ")) {
+                    return (
+                      <h3
+                        key={index}
+                        className="text-lg md:text-xl font-bold text-white border-l-4 border-red-600 pl-3 pt-2"
+                      >
+                        {paragraph.slice(3)}
+                      </h3>
+                    );
+                  }
+                  return <p key={index}>{renderInlineMarkup(paragraph)}</p>;
+                })}
             </div>
           )}
 
