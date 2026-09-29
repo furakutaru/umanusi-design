@@ -9,21 +9,37 @@ import { ExternalLinkIcon } from "../../../components/ExternalLinkIcon";
 import { ConsultCTA } from "../../../components/ConsultCTA";
 import { AnimatedUnderline } from "../../../components/AnimatedUnderline";
 
-// ストーリー本文の簡易マークアップ: **強調** と __アンダーライン強調__（Q&Aと同じ演出）に対応
+// ストーリー本文の簡易マークアップ:
+// **強調** / __アンダーライン強調__（Q&Aと同じ演出） / [[表示テキスト|workのid]] で別事例へリンク
 function renderInlineMarkup(text: string) {
-  return text.split(/(\*\*.+?\*\*|__.+?__)/g).map((part, index) => {
-    if (part.startsWith("**") && part.endsWith("**")) {
-      return (
-        <strong key={index} className="font-bold text-white">
-          {part.slice(2, -2)}
-        </strong>
-      );
-    }
-    if (part.startsWith("__") && part.endsWith("__")) {
-      return <AnimatedUnderline key={index}>{part.slice(2, -2)}</AnimatedUnderline>;
-    }
-    return part;
-  });
+  return text
+    .split(/(\*\*.+?\*\*|__.+?__|\[\[[^|\]]+\|[a-z0-9-]+\]\])/g)
+    .map((part, index) => {
+      if (part.startsWith("**") && part.endsWith("**")) {
+        return (
+          <strong key={index} className="font-bold text-white">
+            {part.slice(2, -2)}
+          </strong>
+        );
+      }
+      if (part.startsWith("__") && part.endsWith("__")) {
+        return <AnimatedUnderline key={index}>{part.slice(2, -2)}</AnimatedUnderline>;
+      }
+      const linkMatch = part.match(/^\[\[([^|\]]+)\|([a-z0-9-]+)\]\]$/);
+      if (linkMatch) {
+        const [, label, workId] = linkMatch;
+        return (
+          <Link
+            key={index}
+            href={`/works/${workId}`}
+            className="font-bold text-red-400 underline underline-offset-4 hover:text-red-300"
+          >
+            {label}
+          </Link>
+        );
+      }
+      return part;
+    });
 }
 
 interface WorkDetailPageProps {
@@ -89,6 +105,25 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
                           <p className="text-xs text-gray-400 text-center mt-2">
                             {work.storyImagesCaption}
                           </p>
+                        )}
+                      </div>
+                    );
+                  }
+                  const galleryMatch = paragraph.match(/^\[\[GALLERY:(.+)\]\]$/);
+                  if (galleryMatch) {
+                    const gallery = work.storyGalleries?.[galleryMatch[1]];
+                    if (!gallery) return null;
+                    return (
+                      <div key={index}>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                          {gallery.images.map((src) => (
+                            <div key={src} className="relative aspect-square rounded-lg overflow-hidden">
+                              <Image src={src} alt={work.title} fill className="object-cover" />
+                            </div>
+                          ))}
+                        </div>
+                        {gallery.caption && (
+                          <p className="text-xs text-gray-400 text-center mt-2">{gallery.caption}</p>
                         )}
                       </div>
                     );
