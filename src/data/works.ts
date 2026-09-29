@@ -1,3 +1,5 @@
+import { ITEMS } from "./items";
+
 export interface Work {
   id: string;
   image: string;
@@ -12,8 +14,10 @@ export interface Work {
   storyImagesCaption?: string;
   // 制作の背景や完成写真など、より詳しい記事がある場合の外部リンク（note等）
   noteUrl?: string;
-  // 詳細ページ下部「その他の制作事例」に優先表示するWork id（未指定時は先頭から自動選出）
+  // 詳細ページ下部「その他の制作事例」に優先表示するWork id（明示指定。最優先で使われる）
   relatedWorkIds?: string[];
+  // 同一オーナー様の別の制作事例をひもづけるための任意キー（例: "owner-sun-or-slice"）
+  ownerId?: string;
 }
 
 export const WORKS: Work[] = [
@@ -38,6 +42,7 @@ export const WORKS: Work[] = [
     image: "/item13.webp",
     title: "サンオルソーライズ号蹄鉄盾",
     description: "馬名に合わせ朝日が登るイメージで作成",
+    ownerId: "owner-sun-or-slice",
   },
   {
     id: "oken-duke-card",
@@ -98,6 +103,7 @@ export const WORKS: Work[] = [
       "初めての個人所有馬でいきなり関東オークス（JPN2）に駒を進めた孝行馬、サンオルソーライズ号。その記念に作ったキャップが、思いがけない「縁」まで運んでくれた事例です。\n\nご依頼のきっかけ\nSNSで見つけていただいたのが最初の接点でした。まず蹄鉄盾をご依頼いただき、その後「キャップも作りたい」とご相談をいただきました。オーナーは縁や思い入れを大切にされる方で、担当の厩務員さんや応援してくださるファンの方へのプレゼントとして、全部で15個ほどのご希望でした。\n\nサンオルソーライズ号のこと\nセリで落札された牝馬で、オーナーにとっては初の個人所有馬。その初めての一頭が重賞に出走してくれたのですから、記念品にも自然と力が入ります。\n\n制作のポイント\nキャップの形状、プリントか刺繍か、カラーの選択肢をご提案するところから始めました。デザインは先に制作した蹄鉄盾を踏襲しつつ、キャップの前立てに収まるよう最適化。同じ馬の記念品として、並べたときに揃う一貫性を意識しています。馬名から連想した「日の出」のイメージをモチーフに、写真はオーナー様のご希望でゴール前を疾走するシーンを使用しました。\n\n完成後のこと\n牧場や関係者の方々にとても好評だったそうです。のちに共通の知人となる方にもキャップを贈ったところ喜んでいただけて、その方がラジオパーソナリティだったご縁で、馬主デザイナーとしてラジオに出演するきっかけにもなりました。オーナーの「縁の輪」に加えていただけた気がした出来事でした。\n\nその後\nサンオルソーライズ号は故障で現役を退き、口取りでキャップを目にする機会はありませんでしたが、引退記念グッズも制作させていただきました。繁殖に上がり、いずれ産駒が走る日を楽しみにしています。\n\n初の個人所有馬、しかも重賞出走馬のアイテムに携われたことは、私にとっても大きな喜びでした。",
     noteUrl: "https://note.com/furakutaru/n/n19a991eadc18",
     relatedWorkIds: ["sun-or-slice-stand", "sun-or-slice-shield"],
+    ownerId: "owner-sun-or-slice",
   },
   {
     id: "sun-or-slice-stand",
@@ -105,6 +111,7 @@ export const WORKS: Work[] = [
     title: "サンオルソーライズ号重賞出走記念アクリルスタンド",
     description: "台座をゼッケンに、疾走中の写真を使うことで躍動感が有る仕上がりに",
     featured: true,
+    ownerId: "owner-sun-or-slice",
     story:
       "サンオルソーライズ号のキャップなどをお作りしたオーナー様から、次のご依頼をいただきました。エンプレス杯に出走した愛馬の記念アクリルスタンドです。\n\nご依頼のきっかけ\n私がSNSに投稿していた別のアクリルスタンドの制作物をご覧になり、「大変素晴らしい出来栄えに見えました」と、同じものをお願いできないかとお声がけをいただきました。実績の投稿が次のご依頼につながった、ありがたい流れです。\n\nいただいた素材とオーダー\nエンプレス杯のレース写真と、鞍上の町田騎手のサインが入った実際のゼッケンの画像を共有いただきました。「レース名のゼッケンを左、馬名のゼッケンを右にして、1枚の土台に」というイメージ、そして撮影時にスマホの影などが写り込んでいるので消してほしい、というご要望でした。\n\n制作のポイント①　ゼッケンを土台にする\n検討の結果、ゼッケンを横並びにするレイアウトは難しいと分かり、台座そのものをゼッケンにする形に変更しました。さらに、町田騎手のサインの位置が台座の差し込み穴と重ならないよう配置を調整して、デザインが完成しました。\n\n制作のポイント②　写真アクリルスタンドの難所\n写真のアクリルスタンドで一番の難関は切り抜きです。特に馬の尻尾やたてがみは細かく、手間がかかります。\nもうひとつ大事なのが「白抑え」です。アクリルは透明な素材に印刷するため、そのままではインクが透けて発色が悪くなります。そこで裏に白のインクを重ねるのですが、この白の範囲づくりが甘いと、写真の縁から白がはみ出して見えて不格好になります。仕上がりの印象を大きく左右するので、気を使う工程です。\n今回はゴール前の疾走感あふれるシーンを使いましたが、口取り写真をアクリルスタンドにするのもおすすめです。\n\n納期への向き合い方\n数量は5個。「熱量が冷めないうちに」というオーナー様のお気持ちを受けて、お急ぎの印刷手配で対応しました。\n\nオーナー様のお声\n「とても重厚感のあるシッカリとしたものに仕上げて頂き、どうもありがとうございました！」\n\nその後のこと\nアクリルスタンドの制作後、共通の知人のラジオパーソナリティの方に再びお招きいただき、そこで初めてオーナー様とお会いすることができました。制作後はX上でのやり取りも増えていたので、知人には「もう競馬場で会っているものと思っていた」と言われたのですが、同じ日に同じ競馬場で愛馬が走っても、同じレースでもない限り、意外と会わないものなんですよね。",
   },
@@ -113,6 +120,7 @@ export const WORKS: Work[] = [
     image: "/portfolio-south-express-shield.webp",
     title: "サウスエクスプレス号蹄鉄盾",
     description: "蹄鉄は幸運のお守りともしられインテリアにも最適です",
+    ownerId: "owner-south-express",
     story:
       "このあと何度もリピート頂いているオーナー様との最初の記念品になったのが、引退したサウスエクスプレス号の蹄鉄盾です。\nSNSで見つけていただいたのがご縁の始まりでした。\n\nサウスエクスプレス号のこと\n川崎で新馬勝ちを飾ったのち、サラブレッドオークションに出され、オーナー様が落札されました。名古屋競馬へ移って3勝を挙げ、引退。その記念として蹄鉄盾をお作りすることになりました。\n\n制作のポイント①　「額」選びの相談から\n当初は2脚分の蹄鉄盾をご希望でしたが、立体額は正方形以外だと選べる種類が極端に少なくなるため、1脚でのご提案に。額はメタル調をご希望でしたが、各種調査のうえ複数の選択肢をご提案し、最終的に白のウッディ調に決まりました。ご希望をそのまま形にするだけでなく、「できること・できないこと」を先に整理してご提案するのも大切な仕事だと考えています。\n\n制作のポイント②　初稿から仕上げまで\n初稿として5案をご提案しました（ダークな写真ベース、グリーン、ブルー、レッド×ホワイトなど、色もテイストもあえて振り幅をつけています）。その中から白赤ベースに決定。さらに「馬をもっと大きく、馬名は控えめに」と調整し、勝負服の黄色が映える一枚に仕上げました。その後、印刷して額装。\n[[GALLERY]]\n※初稿画像中央のグレーの「U」はダミーです。実際の制作物では、この位置に蹄鉄が入ります。\n\nUmanusiDesignの蹄鉄盾\n蹄鉄盾は他でも扱われていますが、ベロアの上に蹄鉄を載せる落ち着いた雰囲気のものが多い印象です。UmanusiDesignでは、サイズや額の制約はあるものの、背景デザインを自由にカスタマイズでき、モダンな仕上がりが可能です。\n\nオーナー様のお声\nサイズは事前にお伝えしていましたが、届いた実物は「思っていた以上に大きくて、またとても格好良く仕上げて頂き」と喜んでいただけました。「ようやく引退した愛馬にも顔向けが出来そうでホッとしております」という言葉は、制作者として一番うれしい一言でした。",
     storyImages: [
@@ -139,3 +147,89 @@ export const WORKS: Work[] = [
 ];
 
 export const FEATURED_WORKS = WORKS.filter((work) => work.featured);
+
+// workのidから決定論的な擬似乱数(0以上1未満)を作る。ビルドの度に結果がぶれないよう、
+// Math.randomではなく文字列ハッシュを利用する
+function seededRandom(seed: string): number {
+  let hash = 0;
+  for (let i = 0; i < seed.length; i++) {
+    hash = (hash << 5) - hash + seed.charCodeAt(i);
+    hash |= 0;
+  }
+  return (Math.abs(hash) % 1000) / 1000;
+}
+
+function shuffleBySeed<T>(items: T[], seed: string): T[] {
+  return items
+    .map((item, index) => ({ item, sortKey: seededRandom(`${seed}-${index}`) }))
+    .sort((a, b) => a.sortKey - b.sortKey)
+    .map(({ item }) => item);
+}
+
+function getWorkCategories(work: Work): Set<string> {
+  return new Set(
+    ITEMS.filter((item) => item.relatedWorkIds?.includes(work.id)).map((item) => item.category)
+  );
+}
+
+/**
+ * 制作事例詳細ページ「その他の制作事例」の選出ロジック。
+ * 1. relatedWorkIds（明示指定）があれば最優先
+ * 2. 同一オーナー（ownerId一致）
+ * 3. 対応アイテムのカテゴリが近いもの
+ * 4. 上記で3件に満たない場合はランダム（work.idで決定論的にシャッフル）で補う
+ */
+export function getRelatedWorks(work: Work, limit = 3): Work[] {
+  if (work.relatedWorkIds) {
+    return work.relatedWorkIds
+      .map((id) => WORKS.find((w) => w.id === id))
+      .filter((w): w is Work => Boolean(w))
+      .slice(0, limit);
+  }
+
+  const picked: Work[] = [];
+  const excludeIds = new Set([work.id]);
+
+  if (work.ownerId) {
+    for (const w of WORKS) {
+      if (picked.length >= limit) break;
+      if (w.ownerId === work.ownerId && !excludeIds.has(w.id)) {
+        picked.push(w);
+        excludeIds.add(w.id);
+      }
+    }
+  }
+
+  if (picked.length < limit) {
+    const myCategories = getWorkCategories(work);
+    if (myCategories.size > 0) {
+      const sameCategoryWorks = shuffleBySeed(
+        WORKS.filter((w) => {
+          if (excludeIds.has(w.id)) return false;
+          const categories = getWorkCategories(w);
+          return [...categories].some((c) => myCategories.has(c));
+        }),
+        work.id
+      );
+      for (const w of sameCategoryWorks) {
+        if (picked.length >= limit) break;
+        picked.push(w);
+        excludeIds.add(w.id);
+      }
+    }
+  }
+
+  if (picked.length < limit) {
+    const rest = shuffleBySeed(
+      WORKS.filter((w) => !excludeIds.has(w.id)),
+      `${work.id}-fallback`
+    );
+    for (const w of rest) {
+      if (picked.length >= limit) break;
+      picked.push(w);
+      excludeIds.add(w.id);
+    }
+  }
+
+  return picked;
+}

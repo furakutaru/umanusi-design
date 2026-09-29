@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { WORKS } from "../../../data/works";
+import { WORKS, getRelatedWorks } from "../../../data/works";
 import { ITEMS } from "../../../data/items";
 import { WorkCard } from "../../../components/WorkCard";
 import { ExternalLinkIcon } from "../../../components/ExternalLinkIcon";
@@ -32,11 +32,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
   if (!work) notFound();
 
   const relatedItems = ITEMS.filter((item) => item.relatedWorkIds?.includes(work.id));
-  const otherWorks = work.relatedWorkIds
-    ? work.relatedWorkIds
-        .map((workId) => WORKS.find((w) => w.id === workId))
-        .filter((w): w is (typeof WORKS)[number] => Boolean(w))
-    : WORKS.filter((w) => w.id !== work.id).slice(0, 3);
+  const otherWorks = getRelatedWorks(work);
 
   return (
     <main className="w-full pt-20 bg-neutral-900 min-h-screen">
