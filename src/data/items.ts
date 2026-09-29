@@ -51,12 +51,7 @@ export const ITEMS: Item[] = [
     price: "20,000〜",
     priceNote: "＋加工賃5,000円〜＋額代2,000円〜＋送料1,000円〜（合計目安 28,000円〜）",
     featured: true,
-    relatedWorkIds: [
-      "sun-or-slice-shield",
-      "sun-or-slice-shield-2",
-      "south-express-shield",
-      "pick-and-roll-shield",
-    ],
+    relatedWorkIds: ["sun-or-slice-shield", "south-express-shield", "pick-and-roll-shield"],
     leadTime: "デザイン3日〜＋作業3日〜",
     specNote:
       "1脚仕様 縦25cm×横27cmの額が基本。2脚以上や他のデザインもご相談可能ですが、2脚以上の横長タイプは対応できる額の種類が限られます",
