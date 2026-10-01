@@ -7,6 +7,7 @@ import { WorkCard } from "../../../components/WorkCard";
 import { ItemImageGallery } from "../../../components/ItemImageGallery";
 import { ExternalLinkIcon } from "../../../components/ExternalLinkIcon";
 import { ConsultCTA } from "../../../components/ConsultCTA";
+import { renderInlineMarkup } from "../../../lib/textMarkup";
 
 interface ItemDetailPageProps {
   params: Promise<{ id: string }>;
@@ -64,7 +65,9 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
 
           <p className="text-xs text-gray-500 mb-2">{ITEM_CATEGORY_LABELS[item.category]}</p>
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">{item.name}</h1>
-          <p className="text-base text-gray-700 leading-7 mb-6 whitespace-pre-line">{item.description}</p>
+          <p className="text-base text-gray-700 leading-7 mb-6 whitespace-pre-line">
+            {renderInlineMarkup(item.description)}
+          </p>
 
           <div className="flex flex-wrap gap-1.5 mb-6">
             {item.tags.map((tag) => (

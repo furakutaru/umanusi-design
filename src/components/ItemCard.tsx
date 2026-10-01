@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Item } from "../data/items";
 import { ExternalLinkIcon } from "./ExternalLinkIcon";
+import { renderInlineMarkup } from "../lib/textMarkup";
 
 const CATEGORY_COLORS: Record<string, string> = {
   memorial: "bg-red-100 text-red-700",
@@ -40,7 +41,7 @@ export const ItemCard = ({ item }: { item: Item }) => {
           </h3>
         </Link>
         <div className="flex-1 min-h-0">
-          <p className="text-sm text-gray-600 line-clamp-3">{item.description}</p>
+          <p className="text-sm text-gray-600 line-clamp-3">{renderInlineMarkup(item.description)}</p>
         </div>
         <div className="flex flex-wrap gap-1.5">
           {item.tags.map((tag) => (
