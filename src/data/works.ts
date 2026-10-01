@@ -22,6 +22,9 @@ export interface Work {
   relatedWorkIds?: string[];
   // 同一オーナー様の別の制作事例をひもづけるための任意キー（例: "owner-sun-or-slice"）
   ownerId?: string;
+  // 同一の馬をひもづけるための任意キー（例: "pick-and-roll"）。複数馬を扱う
+  // 事例（馬名ロゴなど）や特定の馬に紐づかない事例は未設定のままでよい
+  horseId?: string;
   // true の場合、下部の対応アイテムリンクを「〇〇のご依頼です」ではなく
   // 「〇〇の応用制作です」と表示する（お客様からの依頼ではなく自主制作の場合）
   selfInitiated?: boolean;
@@ -43,6 +46,7 @@ export const WORKS: Work[] = [
   },
   {
     id: "little-lily-towel",
+    horseId: "little-lily",
     image: "/item12.webp",
     title: "リトルリリイ号出走記念レイ風マフラータオル",
     description: "フリンジを縫い付けレイ風に",
@@ -51,6 +55,7 @@ export const WORKS: Work[] = [
   },
   {
     id: "sun-or-slice-shield",
+    horseId: "sun-or-slice",
     image: "/item13.webp",
     title: "サンオルソーライズ号蹄鉄盾",
     description: "馬名に合わせ朝日が登るイメージで作成",
@@ -70,6 +75,7 @@ export const WORKS: Work[] = [
   },
   {
     id: "oken-duke-card",
+    horseId: "oken-duke",
     image: "/item14.webp",
     title: "オウケンデューク号 リスタート1周年記念トレーディングカード",
     description: "低コストで配布に最適！",
@@ -88,6 +94,7 @@ export const WORKS: Work[] = [
   },
   {
     id: "luminaval-stand",
+    horseId: "luminaval",
     image: "/item15.webp",
     title: "ルミナヴァル号アクリルスタンド",
     description: "ジオラマタイプで奥行きのあるアクリルスタンド",
@@ -97,6 +104,7 @@ export const WORKS: Work[] = [
   },
   {
     id: "pick-and-roll-tshirt",
+    horseId: "pick-and-roll",
     image: "/item16.webp",
     title: "ピックアンドロール号Tシャツ",
     description: "ツアーTシャツ風に仕上げました",
@@ -115,6 +123,7 @@ export const WORKS: Work[] = [
   },
   {
     id: "luminaval-towel",
+    horseId: "luminaval",
     image: "/portfolio-luminaval-towel.webp",
     title: "ルミナヴァル号応援タオル",
     description: "口取り式で掲げたり応援にも使えます",
@@ -125,6 +134,7 @@ export const WORKS: Work[] = [
   },
   {
     id: "age-runner-card",
+    horseId: "age-runner",
     image: "/portfolio-age-runner-card.webp",
     title: "エイジランナー号トレーディングカード",
     description: "サインを貰うのにも最適",
@@ -134,6 +144,7 @@ export const WORKS: Work[] = [
   },
   {
     id: "firmarpoint-card",
+    horseId: "firmarpoint",
     image: "/portfolio-firmarpoint-card.webp",
     title: "フェルマーポイント号優勝記念トレーディングカード",
     description: "話題になったゴリアット号のトレーディングカードと同じフォーマットで",
@@ -144,6 +155,7 @@ export const WORKS: Work[] = [
   },
   {
     id: "firmarpoint-stand",
+    horseId: "firmarpoint",
     image: "/portfolio-firmarpoint-stand.webp",
     title: "フェルマーポイント号優勝記念アクリルスタンド",
     description: "口取り写真をアクリルスタンドに加工することで立体感のある特別な仕上がりに",
@@ -154,6 +166,7 @@ export const WORKS: Work[] = [
   },
   {
     id: "sun-or-slice-cap",
+    horseId: "sun-or-slice",
     image: "/portfolio-sun-or-slice-cap.webp",
     title: "サンオルソーライズ号キャップ",
     description: "関係者へのプレゼントにも、帽子タイプや刺繍なども選べます",
@@ -165,6 +178,7 @@ export const WORKS: Work[] = [
   },
   {
     id: "sun-or-slice-stand",
+    horseId: "sun-or-slice",
     image: "/portfolio-sun-or-slice-stand.webp",
     title: "サンオルソーライズ号重賞出走記念アクリルスタンド",
     description: "台座をゼッケンに、疾走中の写真を使うことで躍動感が有る仕上がりに",
@@ -175,6 +189,7 @@ export const WORKS: Work[] = [
   },
   {
     id: "south-express-shield",
+    horseId: "south-express",
     image: "/portfolio-south-express-shield.webp",
     title: "サウスエクスプレス号蹄鉄盾",
     description: "蹄鉄は幸運のお守りともしられインテリアにも最適です",
@@ -192,12 +207,14 @@ export const WORKS: Work[] = [
   },
   {
     id: "pick-and-roll-shield",
+    horseId: "pick-and-roll",
     image: "/portfolio-pick-and-roll-shield.webp",
     title: "ピックアンドロール号蹄鉄盾",
     description: "デザイン自由度の高い蹄鉄盾",
   },
   {
     id: "pick-and-roll-photo",
+    horseId: "pick-and-roll",
     image: "/portfolio-pick-and-roll-photo.webp",
     title: "ピックアンドロール号口取り写真カスタム",
     description: "L版の勝利写真をカスタマイズ",
@@ -233,12 +250,40 @@ function getWorkCategories(work: Work): Set<string> {
   );
 }
 
+function getWorkTags(work: Work): Set<string> {
+  return new Set(
+    ITEMS.filter((item) => item.relatedWorkIds?.includes(work.id)).flatMap((item) => item.tags)
+  );
+}
+
+function pickBySharedSet(
+  work: Work,
+  excludeIds: Set<string>,
+  getSet: (w: Work) => Set<string>,
+  limit: number,
+  seedSuffix: string
+): Work[] {
+  const mySet = getSet(work);
+  if (mySet.size === 0) return [];
+  const candidates = shuffleBySeed(
+    WORKS.filter((w) => {
+      if (excludeIds.has(w.id)) return false;
+      const theirSet = getSet(w);
+      return [...theirSet].some((v) => mySet.has(v));
+    }),
+    `${work.id}-${seedSuffix}`
+  );
+  return candidates.slice(0, limit);
+}
+
 /**
  * 制作事例詳細ページ「その他の制作事例」の選出ロジック。
  * 1. relatedWorkIds（明示指定）があれば最優先
- * 2. 同一オーナー（ownerId一致）
- * 3. 対応アイテムのカテゴリが近いもの
- * 4. 上記で3件に満たない場合はランダム（work.idで決定論的にシャッフル）で補う
+ * 2. 同一の馬（horseId一致）
+ * 3. 同一オーナー（ownerId一致）
+ * 4. 対応アイテムのカテゴリが近いもの
+ * 5. 対応アイテムのタグ（応援・記念などのシーン）が近いもの
+ * 6. 上記で3件に満たない場合はランダム（work.idで決定論的にシャッフル）で補う
  */
 export function getRelatedWorks(work: Work, limit = 3): Work[] {
   if (work.relatedWorkIds) {
@@ -251,33 +296,29 @@ export function getRelatedWorks(work: Work, limit = 3): Work[] {
   const picked: Work[] = [];
   const excludeIds = new Set([work.id]);
 
-  if (work.ownerId) {
-    for (const w of WORKS) {
+  const addAll = (candidates: Work[]) => {
+    for (const w of candidates) {
       if (picked.length >= limit) break;
-      if (w.ownerId === work.ownerId && !excludeIds.has(w.id)) {
-        picked.push(w);
-        excludeIds.add(w.id);
-      }
+      if (excludeIds.has(w.id)) continue;
+      picked.push(w);
+      excludeIds.add(w.id);
     }
+  };
+
+  if (work.horseId) {
+    addAll(WORKS.filter((w) => w.horseId === work.horseId && !excludeIds.has(w.id)));
+  }
+
+  if (picked.length < limit && work.ownerId) {
+    addAll(WORKS.filter((w) => w.ownerId === work.ownerId && !excludeIds.has(w.id)));
   }
 
   if (picked.length < limit) {
-    const myCategories = getWorkCategories(work);
-    if (myCategories.size > 0) {
-      const sameCategoryWorks = shuffleBySeed(
-        WORKS.filter((w) => {
-          if (excludeIds.has(w.id)) return false;
-          const categories = getWorkCategories(w);
-          return [...categories].some((c) => myCategories.has(c));
-        }),
-        work.id
-      );
-      for (const w of sameCategoryWorks) {
-        if (picked.length >= limit) break;
-        picked.push(w);
-        excludeIds.add(w.id);
-      }
-    }
+    addAll(pickBySharedSet(work, excludeIds, getWorkCategories, limit - picked.length, "category"));
+  }
+
+  if (picked.length < limit) {
+    addAll(pickBySharedSet(work, excludeIds, getWorkTags, limit - picked.length, "tag"));
   }
 
   if (picked.length < limit) {
@@ -285,11 +326,7 @@ export function getRelatedWorks(work: Work, limit = 3): Work[] {
       WORKS.filter((w) => !excludeIds.has(w.id)),
       `${work.id}-fallback`
     );
-    for (const w of rest) {
-      if (picked.length >= limit) break;
-      picked.push(w);
-      excludeIds.add(w.id);
-    }
+    addAll(rest);
   }
 
   return picked;
