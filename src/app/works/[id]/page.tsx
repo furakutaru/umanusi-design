@@ -142,7 +142,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
                     <span className="mx-1 font-bold text-red-400 underline underline-offset-4">
                       {item.name}
                     </span>
-                    のご依頼です（料金・納期の目安はこちら）
+                    {work.selfInitiated ? "の応用制作です" : "のご依頼です"}（料金・納期の目安はこちら）
                   </p>
                 </Link>
               ))}
