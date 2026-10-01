@@ -8,6 +8,7 @@ import { WorkCard } from "../../../components/WorkCard";
 import { ExternalLinkIcon } from "../../../components/ExternalLinkIcon";
 import { ConsultCTA } from "../../../components/ConsultCTA";
 import { AnimatedUnderline } from "../../../components/AnimatedUnderline";
+import { StoryGallery } from "../../../components/StoryGallery";
 
 // ストーリー本文の簡易マークアップ:
 // **強調** / __アンダーライン強調__（Q&Aと同じ演出） / [[表示テキスト|workのid]] で別事例へリンク
@@ -90,23 +91,14 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
                 .filter((paragraph) => paragraph.trim() !== "")
                 .map((paragraph, index) => {
                   if (paragraph === "[[GALLERY]]") {
+                    if (!work.storyImages || work.storyImages.length === 0) return null;
                     return (
-                      <div key={index}>
-                        {work.storyImages && work.storyImages.length > 0 && (
-                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                            {work.storyImages.map((src) => (
-                              <div key={src} className="relative aspect-square rounded-lg overflow-hidden">
-                                <Image src={src} alt={work.title} fill className="object-cover" />
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                        {work.storyImagesCaption && (
-                          <p className="text-xs text-gray-400 text-center mt-2">
-                            {work.storyImagesCaption}
-                          </p>
-                        )}
-                      </div>
+                      <StoryGallery
+                        key={index}
+                        images={work.storyImages}
+                        alt={work.title}
+                        caption={work.storyImagesCaption}
+                      />
                     );
                   }
                   const galleryMatch = paragraph.match(/^\[\[GALLERY:(.+)\]\]$/);
@@ -114,18 +106,12 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
                     const gallery = work.storyGalleries?.[galleryMatch[1]];
                     if (!gallery) return null;
                     return (
-                      <div key={index}>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                          {gallery.images.map((src) => (
-                            <div key={src} className="relative aspect-square rounded-lg overflow-hidden">
-                              <Image src={src} alt={work.title} fill className="object-cover" />
-                            </div>
-                          ))}
-                        </div>
-                        {gallery.caption && (
-                          <p className="text-xs text-gray-400 text-center mt-2">{gallery.caption}</p>
-                        )}
-                      </div>
+                      <StoryGallery
+                        key={index}
+                        images={gallery.images}
+                        alt={work.title}
+                        caption={gallery.caption}
+                      />
                     );
                   }
                   if (paragraph.startsWith("## ")) {
