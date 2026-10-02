@@ -51,7 +51,7 @@ export const ITEMS: Item[] = [
     price: "20,000〜",
     priceNote: "＋加工賃5,000円〜＋額代2,000円〜＋送料1,000円〜（合計目安 28,000円〜）",
     featured: true,
-    relatedWorkIds: ["sun-or-slice-shield", "south-express-shield", "pick-and-roll-shield"],
+    relatedWorkIds: ["sun-or-slice-shield", "south-express-shield", "pick-and-roll-shield", "namura-lilac"],
     leadTime: "デザイン3日〜＋作業3日〜",
     specNote:
       "1脚仕様 縦25cm×横27cmの額が基本。2脚以上や他のデザインもご相談可能ですが、2脚以上の横長タイプは対応できる額の種類が限られます",
@@ -183,7 +183,7 @@ export const ITEMS: Item[] = [
     price: "10,000〜",
     priceNote: "＋印刷代",
     featured: true,
-    relatedWorkIds: ["luminaval-towel"],
+    relatedWorkIds: ["luminaval-towel", "namura-lilac"],
     leadTime: "デザイン制作3日＋印刷約15日（計18日程度）",
     printPriceExample: "昇華転写5枚 ¥7,760（タオル代・送料込み）※枚数が増えるほど1枚あたりの単価はお安くなります",
     specNote:
@@ -217,6 +217,7 @@ export const ITEMS: Item[] = [
     tags: ["応援", "記念"],
     price: "10,000〜",
     priceNote: "＋印刷代",
+    relatedWorkIds: ["namura-lilac"],
     leadTime: "デザイン3日〜＋印刷7日〜",
     printPriceExample: "横断幕90cm×110cm ¥5,845（送料込み）※サイズが大きくなるほどコストは上がります",
     specNote:
@@ -301,7 +302,7 @@ export const ITEMS: Item[] = [
     tags: ["馬主活動"],
     price: "30,000〜",
     featured: true,
-    relatedWorkIds: ["horse-logo"],
+    relatedWorkIds: ["horse-logo", "namura-lilac"],
     leadTime: "3日〜",
     specNote:
       "納品データ：印刷用高解像度データ／Web用データ／透過PNG／ベクターデータ（AI・EPS形式）\nデザインのみのご提供（印刷や加工が必要な場合は別途印刷代がかかります）",
