@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useRef } from "react";
 import { HeroContent } from "./HeroContent";
+import { HeroItemsMarquee } from "./HeroItemsMarquee";
 import { useFadeInOnScroll } from "../hooks/useFadeInOnScroll";
 
 export default function HeroHeader() {
@@ -50,6 +51,9 @@ export default function HeroHeader() {
       <div className="relative z-20 h-full flex flex-col items-center justify-center">
         <HeroContent />
       </div>
+
+      {/* 対応アイテムのループスクロール */}
+      <HeroItemsMarquee />
     </header>
   );
 } 
