@@ -29,17 +29,17 @@ const LOOPED_ITEMS = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
 
 export const HeroItemsMarquee = () => {
   return (
-    <div className="absolute bottom-0 left-0 z-20 w-full overflow-hidden py-3 md:py-4">
+    <div className="w-full overflow-hidden">
       <div className="flex w-max animate-hero-marquee">
         {LOOPED_ITEMS.map((item, index) => (
           <Link
             key={`${item.id}-${index}`}
             href={`/items/${item.itemId}`}
             aria-label={item.name}
-            className="relative mx-2 md:mx-3 w-16 h-16 md:w-20 md:h-20 flex-shrink-0 rounded-lg overflow-hidden shadow-lg opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 animate-hero-bob"
+            className="relative mx-2 md:mx-4 w-20 h-20 md:w-28 md:h-28 flex-shrink-0 rounded-lg overflow-hidden shadow-lg opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 animate-hero-bob"
             style={{ animationDelay: `${(index % MARQUEE_ITEMS.length) * 0.15}s` }}
           >
-            <Image src={item.image} alt={item.name} fill className="object-cover" sizes="80px" />
+            <Image src={item.image} alt={item.name} fill className="object-cover" sizes="112px" />
           </Link>
         ))}
       </div>

@@ -48,12 +48,15 @@ export default function HeroHeader() {
       <div className="absolute inset-0 bg-black/60 z-10" />
       
       {/* コンテンツ */}
-      <div className="relative z-20 h-full flex flex-col items-center justify-center">
-        <HeroContent />
+      <div className="relative z-20 h-full flex flex-col">
+        <div className="flex-1 flex flex-col items-center justify-center">
+          <HeroContent />
+        </div>
+        {/* 対応アイテムのループスクロール（本文末端〜ヒーロー下端の間で上下中央） */}
+        <div className="shrink-0 h-32 md:h-40 flex items-center justify-center">
+          <HeroItemsMarquee />
+        </div>
       </div>
-
-      {/* 対応アイテムのループスクロール */}
-      <HeroItemsMarquee />
     </header>
   );
 } 
