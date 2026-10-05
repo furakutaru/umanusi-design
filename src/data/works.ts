@@ -271,6 +271,27 @@ export const WORKS: Work[] = [
       },
     },
   },
+  {
+    id: "suivre-card",
+    horseId: "suivre",
+    image: "/suivre-card-poke.webp",
+    title: "スイーヴル号 JRA初勝利記念トレーディングカード",
+    description: "ポケモンカード風とウエハースカード風、2テイストで展開",
+    featured: true,
+    noteUrl: "https://note.com/furakutaru/n/nd43baa12cc58",
+    story:
+      "スイーヴル号の札幌でのJRA初勝利を記念し、トレーディングカードを2種類制作しました。ポケモンカード風とサラブレッドコレクションのウエハースカード風、テイストの異なる2パターンでの展開です。\n\n## ポケモンカード風\nゴール板の手前でスイーヴル号をアップに、後ろに他馬を掠めさせた斜め前アングルのイラストで__「7馬身差」という勝利の内容までカードに込めました__。印刷も本家のポケモンカードに寄せ、表面のみホログラム加工という仕様にこだわっています。\n[[GALLERY:poke]]\n\n## ウエハースカード風\nレース写真と血統・プロフィール情報をまとめたサラブレッドウエハース風のデザインです。\n[[GALLERY:wafer]]\n\n「勝った馬が増えたら、デッキにしていきたい」というオーナー様の次の夢を伺いながらの制作となりました。\n\n制作の過程（著名イラストレーターへの相談、印刷仕様の壁、ディレクション費のご相談など）は下記のnote記事で詳しくご紹介しています。",
+    storyGalleries: {
+      poke: {
+        images: ["/suivre-card-poke.webp"],
+        caption: "ポケモンカード風デザイン（表・裏）",
+      },
+      wafer: {
+        images: ["/suivre-card-wafer.webp"],
+        caption: "ウエハースカード風デザイン（表・裏）",
+      },
+    },
+  },
 ];
 
 export const FEATURED_WORKS = WORKS.filter((work) => work.featured);

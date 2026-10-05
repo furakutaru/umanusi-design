@@ -68,7 +68,7 @@ export const ITEMS: Item[] = [
     price: "10,000〜",
     priceNote: "（1種）＋印刷代",
     featured: true,
-    relatedWorkIds: ["oken-duke-card", "age-runner-card", "firmarpoint-card"],
+    relatedWorkIds: ["oken-duke-card", "age-runner-card", "firmarpoint-card", "suivre-card"],
     leadTime: "デザイン3日〜＋印刷5日〜",
     printPriceExample: "1種20枚 ホログラム角丸 ¥1,920（送料込み）※枚数が増えるほど1枚あたりの単価は下がります",
     specNote: "ホログラム加工／角丸仕上げ。上記以外の枚数・仕様もご相談可能",
