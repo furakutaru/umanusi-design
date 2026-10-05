@@ -60,4 +60,28 @@ html {
 
 .animate-attention {
   animation: attention-fade 1.6s cubic-bezier(0.4,0,0.2,1) infinite;
+}
+
+@keyframes hero-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-hero-marquee {
+  animation: hero-marquee 40s linear infinite;
+}
+
+@keyframes hero-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-hero-bob {
+  animation: hero-bob 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-bob {
+    animation: none;
+  }
 } 

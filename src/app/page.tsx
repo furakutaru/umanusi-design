@@ -1,15 +1,12 @@
 import HeroHeader from '../components/HeroHeader';
 import ProfileSection from '../components/ProfileSection';
-import { ValuePropositionSection } from '../components/ValuePropositionSection';
-import UseCaseSection from '../components/UseCaseSection';
-import ServiceSection from '../components/ServiceSection';
-import { CTAArea } from '../components/CTAArea';
-import PortfolioSection from '../components/PortfolioSection';
-import TestimonialSection from '../components/TestimonialSection';
-import { PriceSection } from '../components/PriceSection';
-import PrintPrice from '../components/PrintPrice';
-import { ServiceList } from '../components/ServiceList';
+import { WhatWeCanMake } from '../components/WhatWeCanMake';
+import { FeaturedItemsSection } from '../components/FeaturedItemsSection';
+import { FeaturedWorksSection } from '../components/FeaturedWorksSection';
+import { ConsultExamplesSection } from '../components/ConsultExamplesSection';
+import { PricingSection } from '../components/PricingSection';
 import Process from '../components/Process';
+import TestimonialSection from '../components/TestimonialSection';
 import FAQ from '../components/FAQ';
 import NoteSection from '../components/NoteSection';
 import Footer from '../components/Footer';
@@ -20,17 +17,13 @@ export default function Home() {
       <HeroHeader />
       <main className="w-full p-0 m-0">
         <ProfileSection />
-        <ValuePropositionSection />
-        <UseCaseSection />
-        <ServiceSection />
-        <CTAArea />
-        <PortfolioSection />
-        <TestimonialSection />
-        <PriceSection />
-        <PrintPrice />
-        <ServiceList />
-        <CTAArea />
+        <WhatWeCanMake />
+        <FeaturedItemsSection />
+        <FeaturedWorksSection />
+        <ConsultExamplesSection />
+        <PricingSection />
         <Process />
+        <TestimonialSection />
         <FAQ />
         <NoteSection />
       </main>
