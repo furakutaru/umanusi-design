@@ -26,7 +26,7 @@ export const ConsultExamplesSection = () => {
           {CONSULTATION_FOOTER_NOTE}
         </p>
         <div className="flex justify-center">
-          <ConsultCTA location="consult_examples" />
+          <ConsultCTA location="consult_examples" showAltChannels />
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CONTACT_FORM_URL } from '../data/contact';
@@ -45,23 +45,8 @@ function AnimatedAccordion({ open, children }: { open: boolean; children: React.
 }
 
 export const Header = () => {
-  const [scrolledPastHero, setScrolledPastHero] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
-
-  useEffect(() => {
-    const hero = document.getElementById('top');
-    if (!hero) {
-      setScrolledPastHero(true);
-      return;
-    }
-    const observer = new IntersectionObserver(
-      ([entry]) => setScrolledPastHero(!entry.isIntersecting),
-      { threshold: 0.1 }
-    );
-    observer.observe(hero);
-    return () => observer.disconnect();
-  }, []);
 
   const handleCtaClick = () => {
     sendEvent('contact_form_click', { location: 'header' });
@@ -70,11 +55,7 @@ export const Header = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ease-in-out px-4 md:px-8 h-20 flex items-center justify-between shadow-lg ${
-          scrolledPastHero
-            ? 'bg-black/70 backdrop-blur-md translate-y-0 opacity-100'
-            : 'bg-black/40 backdrop-blur-sm translate-y-0 opacity-100'
-        }`}
+        className="fixed top-0 left-0 w-full z-40 px-4 md:px-8 h-20 flex items-center justify-between shadow-lg bg-black/70 backdrop-blur-md"
       >
         <Link href="/" className="flex-shrink-0">
           <Image

@@ -2,11 +2,13 @@
 import React from "react";
 import { CONTACT_FORM_URL } from "../data/contact";
 import { sendEvent } from "../lib/analytics";
+import { AltContactChannels } from "./AltContactChannels";
 
 interface ConsultCTAProps {
   location: string;
   variant?: "primary" | "inline" | "footer";
   showHelperText?: boolean;
+  showAltChannels?: boolean;
   dark?: boolean;
   className?: string;
 }
@@ -24,6 +26,7 @@ export const ConsultCTA = ({
   location,
   variant = "primary",
   showHelperText = true,
+  showAltChannels = false,
   dark = false,
   className = "",
 }: ConsultCTAProps) => {
@@ -48,6 +51,7 @@ export const ConsultCTA = ({
           相談だけでもOK。まだ仕様が決まっていなくても大丈夫です。
         </p>
       )}
+      {showAltChannels && <AltContactChannels location={location} dark={dark} />}
     </div>
   );
 };

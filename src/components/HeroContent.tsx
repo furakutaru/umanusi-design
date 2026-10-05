@@ -1,6 +1,7 @@
 'use client';
 import React from "react";
 import { HeroButtons } from "./HeroButtons";
+import { AltContactChannels } from "./AltContactChannels";
 import { useFadeInOnScroll } from "../hooks/useFadeInOnScroll";
 
 export const HeroContent = () => {
@@ -21,6 +22,9 @@ export const HeroContent = () => {
       <p className="mt-6 text-sm md:text-base text-white/80 drop-shadow-md">
         まだ仕様が決まっていなくてもOK。まずはお気軽にご相談ください。
       </p>
+      <div className="drop-shadow-md">
+        <AltContactChannels location="hero" dark />
+      </div>
     </div>
   );
 }; 

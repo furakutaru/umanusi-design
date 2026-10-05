@@ -25,3 +25,8 @@ export function sendEvent(name: string, params?: EventParams) {
   if (!window.gtag) return;
   window.gtag("event", name, params);
 }
+
+export function openChatWidget() {
+  if (typeof window === "undefined") return;
+  window.Tawk_API?.maximize?.();
+}
