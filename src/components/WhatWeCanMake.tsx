@@ -14,25 +14,25 @@ const AREAS = [
     title: "愛馬の記念グッズ",
     description: "勝利記念・引退記念・出走記念など、大切な瞬間を形に残します。",
     category: "memorial",
-    image: undefined as string | undefined,
+    image: "/whatwecanmake-memorial.webp" as string | undefined,
   },
   {
     title: "ウェア・応援グッズ",
     description: "Tシャツ、キャップ、応援タオルなど、応援の熱を届けるアイテムです。",
     category: "wear",
-    image: undefined as string | undefined,
+    image: "/whatwecanmake-wear.webp" as string | undefined,
   },
   {
     title: "印刷物・販促物",
     description: "パンフレット、ポスター、チラシなど、目的に応じたデザインを制作します。",
     category: "business",
-    image: undefined as string | undefined,
+    image: "/whatwecanmake-print.webp" as string | undefined,
   },
   {
     title: "ロゴ・名刺",
     description: "馬主・厩舎・牧場のブランドアイデンティティを表現します。",
     category: "business",
-    image: undefined as string | undefined,
+    image: "/whatwecanmake-logo.png" as string | undefined,
   },
 ];
 
