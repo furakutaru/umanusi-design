@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { ConsultCTA } from './ConsultCTA';
-import { ContactChannels } from './ContactChannels';
+import { AltContactChannels } from './AltContactChannels';
 import { NOTE_URL, NETSHOP_URL } from '../data/contact';
 import { useFadeInOnScroll } from "../hooks/useFadeInOnScroll";
 
@@ -28,7 +28,7 @@ export const Footer = () => {
           <div ref={buttonRef.ref} style={{ transitionDelay: '0.6s' }} className={`fade-in${buttonRef.isVisible ? ' is-visible' : ''} w-full flex justify-center`}>
             <ConsultCTA location="footer" variant="footer" dark />
           </div>
-          <ContactChannels variant="light" showFormButton={false} />
+          <AltContactChannels location="footer" tone="onLight" />
           {/* BLOG・NetShopリンク追加 */}
           <div className="flex flex-row gap-6 justify-center items-center mt-2">
             <a

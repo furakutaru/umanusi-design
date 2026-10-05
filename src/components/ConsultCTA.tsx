@@ -3,6 +3,7 @@ import React from "react";
 import { CONTACT_FORM_URL } from "../data/contact";
 import { sendEvent } from "../lib/analytics";
 import { AltContactChannels } from "./AltContactChannels";
+import { ConsultHelperText } from "./ConsultHelperText";
 
 interface ConsultCTAProps {
   location: string;
@@ -47,11 +48,9 @@ export const ConsultCTA = ({
         馬主デザイナーに相談する
       </a>
       {showHelperText && (
-        <p className={`text-sm ${dark ? "text-gray-300" : "text-gray-500"}`}>
-          相談だけでもOK。まだ仕様が決まっていなくても大丈夫です。
-        </p>
+        <ConsultHelperText className={`text-sm ${dark ? "text-gray-300" : "text-gray-500"}`} />
       )}
-      {showAltChannels && <AltContactChannels location={location} dark={dark} />}
+      {showAltChannels && <AltContactChannels location={location} tone={dark ? "onDark" : "muted"} />}
     </div>
   );
 };
