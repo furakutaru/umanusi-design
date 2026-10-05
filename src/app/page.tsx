@@ -1,4 +1,5 @@
 import HeroHeader from '../components/HeroHeader';
+import ProfileSection from '../components/ProfileSection';
 import { WhatWeCanMake } from '../components/WhatWeCanMake';
 import { FeaturedItemsSection } from '../components/FeaturedItemsSection';
 import { FeaturedWorksSection } from '../components/FeaturedWorksSection';
@@ -15,6 +16,7 @@ export default function Home() {
     <>
       <HeroHeader />
       <main className="w-full p-0 m-0">
+        <ProfileSection />
         <WhatWeCanMake />
         <FeaturedItemsSection />
         <FeaturedWorksSection />
