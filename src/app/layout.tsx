@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from '../components/Header';
 import { AnalyticsScripts } from '../components/AnalyticsScripts';
 import { ChatWidget } from '../components/ChatWidget';
+import { UtmCapture } from '../components/UtmCapture';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,6 +64,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <UtmCapture />
         <Header />
         <AnalyticsScripts />
         {children}

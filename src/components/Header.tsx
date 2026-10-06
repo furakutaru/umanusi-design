@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CONTACT_FORM_URL } from '../data/contact';
+import { CONTACT_HUB_PATH } from '../data/contact';
 import { sendEvent } from '../lib/analytics';
 
 const MENU_GROUPS = [
@@ -94,15 +94,13 @@ export const Header = () => {
             </div>
           ))}
 
-          <a
-            href={CONTACT_FORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href={CONTACT_HUB_PATH}
             onClick={handleCtaClick}
             className="ml-4 px-6 py-2 bg-red-600 text-white font-bold text-sm rounded-full hover:bg-red-700 transition-all hover:scale-105 shadow-md active:scale-95"
           >
             相談する
-          </a>
+          </Link>
         </div>
 
         <button
@@ -155,10 +153,8 @@ export const Header = () => {
                 </li>
               ))}
               <li className="mt-6">
-                <a
-                  href={CONTACT_FORM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href={CONTACT_HUB_PATH}
                   onClick={() => {
                     handleCtaClick();
                     setMobileOpen(false);
@@ -166,7 +162,7 @@ export const Header = () => {
                   className="w-full text-lg font-bold text-white bg-red-600 rounded-full py-3 hover:bg-red-700 transition-colors shadow block text-center"
                 >
                   馬主デザイナーに相談する
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

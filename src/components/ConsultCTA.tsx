@@ -1,6 +1,7 @@
 'use client';
 import React from "react";
-import { CONTACT_FORM_URL } from "../data/contact";
+import Link from "next/link";
+import { CONTACT_HUB_PATH } from "../data/contact";
 import { sendEvent } from "../lib/analytics";
 import { AltContactChannels } from "./AltContactChannels";
 import { ConsultHelperText } from "./ConsultHelperText";
@@ -38,15 +39,9 @@ export const ConsultCTA = ({
 
   return (
     <div className={`flex flex-col items-center gap-2 ${className}`}>
-      <a
-        href={CONTACT_FORM_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={handleClick}
-        className={VARIANT_CLASSES[variant]}
-      >
+      <Link href={CONTACT_HUB_PATH} onClick={handleClick} className={VARIANT_CLASSES[variant]}>
         馬主デザイナーに相談する
-      </a>
+      </Link>
       {showHelperText && (
         <ConsultHelperText className={`text-sm ${dark ? "text-gray-300" : "text-gray-500"}`} />
       )}

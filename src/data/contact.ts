@@ -1,4 +1,6 @@
-export const CONTACT_FORM_URL = "https://forms.gle/V9r7VgnJzw6MjEQb7";
+export const CONTACT_HUB_PATH = "/contact";
+export const CONSULT_FORM_PATH = "/contact/consult";
+export const ORDER_FORM_PATH = "/contact/order";
 export const X_HANDLE = "@furakutaru";
 export const X_URL = "https://x.com/furakutaru";
 export const LINE_URL = "https://lin.ee/xrzDCip";
