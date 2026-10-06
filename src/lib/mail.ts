@@ -1,10 +1,9 @@
-export async function sendNotificationMail(subject: string, text: string) {
+async function sendMail(to: string, subject: string, text: string) {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.NOTIFY_TO_EMAIL;
   const from = process.env.NOTIFY_FROM_EMAIL;
 
-  if (!apiKey || !to || !from) {
-    console.warn("Resend env vars are not set; skipping notification mail");
+  if (!apiKey || !from) {
+    console.warn("Resend env vars are not set; skipping mail");
     return;
   }
 
@@ -26,4 +25,17 @@ export async function sendNotificationMail(subject: string, text: string) {
     const body = await res.text();
     console.error(`Resend request failed (${res.status}): ${body}`);
   }
+}
+
+export async function sendNotificationMail(subject: string, text: string) {
+  const to = process.env.NOTIFY_TO_EMAIL;
+  if (!to) {
+    console.warn("NOTIFY_TO_EMAIL is not set; skipping notification mail");
+    return;
+  }
+  await sendMail(to, subject, text);
+}
+
+export async function sendConfirmationMail(to: string, subject: string, text: string) {
+  await sendMail(to, subject, text);
 }

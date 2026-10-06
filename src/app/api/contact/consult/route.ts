@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { AIRTABLE_TABLE_INQUIRIES, createAirtableRecord, nowInJST } from "@/lib/airtable";
-import { sendNotificationMail } from "@/lib/mail";
+import { sendConfirmationMail, sendNotificationMail } from "@/lib/mail";
 
 export async function POST(req: Request) {
   let body: {
@@ -57,6 +57,21 @@ export async function POST(req: Request) {
     ]
       .filter(Boolean)
       .join("\n\n")
+  );
+
+  await sendConfirmationMail(
+    email,
+    "【UMANUSI Design】お問い合わせありがとうございます",
+    [
+      `${name || "お客"}様`,
+      "",
+      "この度はUMANUSI Designへご相談いただき、ありがとうございます。",
+      "以下の内容で承りました。内容を確認のうえ、改めてご連絡いたします。",
+      "",
+      `お問い合わせ内容:\n${message}`,
+      "",
+      "※このメールは送信確認のための自動返信です。心当たりがない場合はこのメールを破棄してください。",
+    ].join("\n")
   );
 
   return NextResponse.json({ ok: true });
