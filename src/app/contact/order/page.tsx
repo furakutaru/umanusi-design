@@ -98,9 +98,14 @@ export default function OrderFormPage() {
         <div className="mx-auto max-w-[600px] px-4 text-center">
           <h1 className="text-2xl font-bold text-gray-900">送信しました</h1>
           <p className="mt-4 text-sm leading-7 text-gray-700">
-            ご依頼ありがとうございます。内容を確認のうえ、ご記入いただいたメールアドレスへご連絡いたします。
+            ご依頼ありがとうございます。
+            <br />
+            内容を確認のうえ、ご記入いただいたメールアドレスへご連絡いたします。
           </p>
-          <Link href="/" className="mt-8 inline-block text-sm font-semibold text-red-600 underline">
+          <Link
+            href="/"
+            className="mt-8 inline-block rounded-full bg-red-600 px-8 py-3 text-sm font-bold text-white transition-all duration-200 ease-out hover:scale-105"
+          >
             トップページへ戻る
           </Link>
         </div>
