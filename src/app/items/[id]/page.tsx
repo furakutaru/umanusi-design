@@ -7,6 +7,7 @@ import { WorkCard } from "../../../components/WorkCard";
 import { ItemImageGallery } from "../../../components/ItemImageGallery";
 import { ExternalLinkIcon } from "../../../components/ExternalLinkIcon";
 import { ConsultCTA } from "../../../components/ConsultCTA";
+import { FAQItem } from "../../../components/FAQItem";
 import { renderInlineMarkup } from "../../../lib/textMarkup";
 
 interface ItemDetailPageProps {
@@ -149,8 +150,53 @@ export default async function ItemDetailPage({ params }: ItemDetailPageProps) {
             </a>
           )}
 
-          <div className="flex justify-center mb-14">
-            <ConsultCTA location="item_detail" />
+          {item.flowSteps && item.flowSteps.length > 0 && (
+            <div className="mb-10">
+              <h2 className="text-xl font-bold text-gray-900 mb-5">ご利用の流れ</h2>
+              <ol className="flex flex-col gap-4">
+                {item.flowSteps.map((step, index) => (
+                  <li
+                    key={step.title}
+                    className="flex gap-4 bg-gray-50 border border-gray-200 rounded-lg p-4"
+                  >
+                    <span className="flex-none flex items-center justify-center w-7 h-7 rounded-full bg-red-600 text-white text-sm font-bold">
+                      {index + 1}
+                    </span>
+                    <div>
+                      <p className="text-sm font-bold text-gray-900">{step.title}</p>
+                      <p className="mt-1 text-sm text-gray-700 leading-6 whitespace-pre-line">
+                        {step.description}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+
+          {item.itemFaq && item.itemFaq.length > 0 && (
+            <div className="mb-10">
+              <h2 className="text-xl font-bold text-gray-900 mb-5">よくある質問</h2>
+              <div className="flex flex-col gap-4">
+                {item.itemFaq.map((faq) => (
+                  <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
+                ))}
+              </div>
+            </div>
+          )}
+
+          <div className="flex flex-col items-center gap-2 mb-14">
+            <ConsultCTA
+              location="item_detail"
+              href={item.ctaHref}
+              label={item.ctaLabel}
+              showHelperText={!item.ctaHref}
+            />
+            {item.ctaHref && (
+              <p className="text-center text-sm text-gray-500">
+                UmanusiRewardへの登録がまだの方は、登録後にお申し込みください。
+              </p>
+            )}
           </div>
 
           {relatedWorks.length > 0 && (

@@ -13,6 +13,8 @@ interface ConsultCTAProps {
   showAltChannels?: boolean;
   dark?: boolean;
   className?: string;
+  href?: string;
+  label?: string;
 }
 
 const VARIANT_CLASSES: Record<NonNullable<ConsultCTAProps["variant"]>, string> = {
@@ -31,6 +33,8 @@ export const ConsultCTA = ({
   showAltChannels = false,
   dark = false,
   className = "",
+  href = CONTACT_HUB_PATH,
+  label = "馬主デザイナーに相談する",
 }: ConsultCTAProps) => {
   const handleClick = () => {
     sendEvent("contact_form_click", { location });
@@ -39,8 +43,8 @@ export const ConsultCTA = ({
 
   return (
     <div className={`flex flex-col items-center gap-2 ${className}`}>
-      <Link href={CONTACT_HUB_PATH} onClick={handleClick} className={VARIANT_CLASSES[variant]}>
-        馬主デザイナーに相談する
+      <Link href={href} onClick={handleClick} className={VARIANT_CLASSES[variant]}>
+        {label}
       </Link>
       {showHelperText && (
         <ConsultHelperText className={`text-sm ${dark ? "text-gray-300" : "text-gray-500"}`} />
