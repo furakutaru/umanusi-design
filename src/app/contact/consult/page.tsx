@@ -137,7 +137,7 @@ export default function ConsultFormPage() {
             ))}
           </fieldset>
 
-          <label className="flex items-start gap-2 text-sm text-gray-700">
+          <label className="flex items-start gap-2 border-t border-gray-200 pt-6 text-sm text-gray-700">
             <input
               type="checkbox"
               required
@@ -145,7 +145,12 @@ export default function ConsultFormPage() {
               onChange={(e) => setAgree(e.target.checked)}
               className="mt-0.5 h-4 w-4"
             />
-            <span>個人情報の取り扱いに同意する</span>
+            <span>
+              <Link href="/privacy" className="underline">
+                個人情報の取り扱い
+              </Link>
+              に同意する <span className="text-red-600">必須</span>
+            </span>
           </label>
 
           {status === "error" && (

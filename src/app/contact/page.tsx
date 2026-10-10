@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONSULT_FORM_PATH, ORDER_FORM_PATH } from "@/data/contact";
+import { CONSULT_FORM_PATH, MCARD_FORM_PATH, ORDER_FORM_PATH } from "@/data/contact";
 import { ContactChannelCards } from "@/components/ContactChannelCards";
 
 export const metadata: Metadata = {
@@ -61,6 +61,12 @@ export default function ContactHubPage() {
             title="制作を依頼する"
             description="作りたいものがある程度決まっている方向けのフォームです。ご希望のアイテムや納期などをお伺いします。"
             cta="依頼フォームへ"
+          />
+          <Card
+            href={MCARD_FORM_PATH}
+            title="更新できる馬主名刺を申し込む"
+            description="QRコードから愛馬情報を常に最新の状態で見せられる名刺の専用申し込みフォームです。UmanusiRewardへの登録が前提となります。"
+            cta="馬主名刺フォームへ"
           />
         </section>
 

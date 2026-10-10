@@ -6,7 +6,6 @@ import { sendEvent } from "@/lib/analytics";
 
 const ITEM_OPTIONS = [
   "名刺",
-  "更新できる馬主名刺",
   "トレカ",
   "アクスタ",
   "横断幕",
@@ -247,7 +246,7 @@ export default function OrderFormPage() {
             ))}
           </fieldset>
 
-          <label className="flex items-start gap-2 text-sm text-gray-700">
+          <label className="flex items-start gap-2 border-t border-gray-200 pt-6 text-sm text-gray-700">
             <input
               type="checkbox"
               required
@@ -256,7 +255,11 @@ export default function OrderFormPage() {
               className="mt-0.5 h-4 w-4"
             />
             <span>
-              制作開始後のキャンセルはお受けできないこと、および個人情報の取り扱いに同意する
+              制作開始後のキャンセルはお受けできないこと、および
+              <Link href="/privacy" className="underline">
+                個人情報の取り扱い
+              </Link>
+              に同意する <span className="text-red-600">必須</span>
             </span>
           </label>
 

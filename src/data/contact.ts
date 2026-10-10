@@ -1,6 +1,8 @@
 export const CONTACT_HUB_PATH = "/contact";
 export const CONSULT_FORM_PATH = "/contact/consult";
 export const ORDER_FORM_PATH = "/contact/order";
+export const MCARD_FORM_PATH = "/contact/mcard";
+export const PRIVACY_POLICY_PATH = "/privacy";
 export const X_HANDLE = "@furakutaru";
 export const X_URL = "https://x.com/furakutaru";
 export const LINE_URL = "https://lin.ee/xrzDCip";
