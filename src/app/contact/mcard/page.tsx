@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { getStoredUtm } from "@/lib/utm";
 import { sendEvent } from "@/lib/analytics";
@@ -260,6 +261,7 @@ export default function McardFormPage() {
 
             <label className="flex flex-col gap-1.5">
               <span className="text-sm font-semibold text-gray-800">名刺に掲載するお名前</span>
+              <span className="text-xs text-gray-500">上記ご本人のお名前と同じ場合は空欄でOKです</span>
               <input
                 type="text"
                 value={listedName}
@@ -300,6 +302,7 @@ export default function McardFormPage() {
 
             <label className="flex flex-col gap-1.5">
               <span className="text-sm font-semibold text-gray-800">メールアドレス</span>
+              <span className="text-xs text-gray-500">上記ご記入のメールアドレスと同じ場合は空欄でOKです</span>
               <input
                 type="text"
                 value={listedEmail}
@@ -320,10 +323,25 @@ export default function McardFormPage() {
 
             <label className="flex flex-col gap-1.5">
               <span className="text-sm font-semibold text-gray-800">UmanusiReward共有ページURL</span>
+              <span className="text-xs leading-5 text-gray-500">
+                UmanusiRewardのトップページでシェアボタンを押し、「公開ページを見る」で開いたページのURL（または投稿テキストに表示されているURL）です。
+                <br />
+                例：https://umanusi-reward.onrender.com/p/KrTxmVkQxugMBl39eh5y0g
+              </span>
+              <div className="overflow-hidden rounded-lg border border-gray-200">
+                <Image
+                  src="/reward-share-guide.png"
+                  alt="UmanusiRewardのシェア画面で「公開ページを見る」を押すとURLが確認できます"
+                  width={840}
+                  height={744}
+                  className="w-full"
+                />
+              </div>
               <input
                 type="text"
                 value={listedRewardUrl}
                 onChange={(e) => setListedRewardUrl(e.target.value)}
+                placeholder="https://umanusi-reward.onrender.com/p/..."
                 className="rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-red-600 focus:outline-none"
               />
             </label>
