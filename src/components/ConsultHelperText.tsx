@@ -8,9 +8,9 @@ interface ConsultHelperTextProps {
 export const ConsultHelperText = ({ className = "" }: ConsultHelperTextProps) => {
   return (
     <p className={`text-center ${className}`}>
-      まだ仕様が決まっていなくても大丈夫です。
-      <br className="sm:hidden" />
-      まずはお気軽にご相談ください。
+      商品・数量・デザイン未定でOK！
+      <br />
+      「○○号で何か作りたい」だけでも大丈夫です。
     </p>
   );
 };
